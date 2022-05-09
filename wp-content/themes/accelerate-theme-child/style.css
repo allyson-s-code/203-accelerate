@@ -23,25 +23,83 @@ Text Domain:  accelerate-theme-child
   background: none repeat scroll 0 0 #45ac9d;
 }
 
+#main {
+  margin-bottom: 1em;
+}
+
 .button {
   background: none repeat scroll 0 0 #45ac9d;
+}
+
+#featured-work {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-content {
+  width: 920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.featured-work h4 {
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2.5em;
+}
+
+.homepage-featured-work {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.individual-featured-work {
+  width: 290px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.individual-featured-work h3 {
+  font-size: 1.03em;
+  text-align: center;
+  font-weight: 400;
+  margin: 1.25em 0 3.5em 0;
 }
 
 .blog-post {
   width: 50%;
   float: left;
   margin-bottom: 2em;
+  clear: both;
 }
 
 .blog-post h4 {
   font: 700 1em/1.75 "Montserrat", "Open Sans", Arial, sans-serif;
   color: #a6a6a6;
   text-transform: uppercase;
-  margin: 2em 0 0.5em;
+  margin: 2em 0 0 0;
+  text-align: left;
 }
 
 .blog-post h3 {
   font-size: 1.5em;
+  text-align: left;
+}
+
+.blog-post p {
+  color: #3b3b3b;
+  margin: 1.75em 0 2.75em 0;
 }
 
 .read-more-link {
@@ -49,4 +107,56 @@ Text Domain:  accelerate-theme-child
   font-weight: 700;
   color: #45ac9d;
   text-transform: uppercase;
+}
+
+/* --Case Studies-- */
+
+.case-study {
+  margin: 3em 0;
+}
+
+aside.case-study-sidebar {
+  float: left;
+  width: 300px;
+  margin: 4em 6.25em 0 0;
+}
+
+aside h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  line-height: 1;
+}
+
+aside h4 {
+  color: #a6a6a6;
+  font-size: 0.87rem;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 0.9rem;
+}
+
+aside span {
+  font-size: 0.9rem;
+  font-family: "Open Sans", sans-serif;
+  color: #3b3b3b;
+}
+
+aside p {
+  font-size: 1rem;
+  margin: 2rem 0;
+}
+
+.read-more-link {
+  font-size: 1rem;
+}
+
+div.case-study-images {
+  float: left;
+  width: 550px;
+}
+
+.case-study-images img {
+  padding-bottom: 5rem;
 }
