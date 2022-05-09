@@ -38,7 +38,6 @@ Text Domain:  accelerate-theme-child
 }
 
 .site-content {
-  width: 920px;
   display: flex;
   flex-direction: column;
   justify-content: center;
