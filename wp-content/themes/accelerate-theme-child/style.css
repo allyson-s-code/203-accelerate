@@ -109,16 +109,26 @@ Text Domain:  accelerate-theme-child
   text-transform: uppercase;
 }
 
-/* --Case Studies-- */
+/* --Single Case Studies-- */
 
 .case-study {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin: 3em 0;
 }
 
 aside.case-study-sidebar {
-  float: left;
-  width: 300px;
-  margin: 4em 6.25em 0 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  text-align: left;
+  margin: 0;
 }
 
 aside h2 {
@@ -135,50 +145,41 @@ aside h5 {
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
   margin-top: 0.9rem;
+  text-transform: none;
 }
 
-aside span {
+aside h4 {
   font-size: 0.9rem;
   font-family: "Open Sans", sans-serif;
   color: #3b3b3b;
+  font-weight: 400;
+  text-align: left;
+  margin: 0.5rem 0;
 }
 
 aside p {
   font-size: 1rem;
   margin: 2rem 0;
+  text-align: left;
 }
 
 .read-more-link {
-  font-size: 1rem;
-}
-
-div.case-study-images {
-  float: left;
-  width: 550px;
+  font-size: 0.875rem;
+  margin: 0;
 }
 
 .case-study-images img {
-  padding-bottom: 5rem;
+  padding-bottom: 1.5rem;
 }
 
 /* --Archive Case Studies-- */
-
-.case-study h5 {
-  color: #a6a6a6;
-  font-size: 0.87rem;
-  font-weight: 400;
-  font-family: "Open Sans", sans-serif;
-  margin-top: 0.9rem;
-}
-
-.case-study-images {
-  width: 550px;
-}
-
-.case-study-images img {
+.case-study {
   width: 100%;
-  height: auto;
-  padding: 0 0 70px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* Media Queries */
@@ -214,5 +215,44 @@ div.case-study-images {
 
   .blog-post h3 {
     text-align: left;
+  }
+
+  /* Single Case Study */
+
+  .case-study {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    margin: 0;
+  }
+
+  aside.case-study-sidebar {
+    width: 33%;
+    text-align: left;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: left;
+    padding-top: 6.5rem;
+  }
+
+  aside.case-study-sidebar p,
+  aside.case-study-sidebar h2,
+  aside.case-study-sidebar h5,
+  aside.case-study-sidebar h4 {
+    width: 100%;
+  }
+
+  .case-study-images {
+    width: 60%;
+  }
+
+  .case-study-images img {
+    width: 100%;
+    height: auto;
+    margin: 2.2rem 0;
+    padding: 0;
   }
 }

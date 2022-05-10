@@ -27,7 +27,7 @@ get_header(); ?>
 			
 					<?php the_excerpt(); ?>
 
-					<p><strong><a href="<?php the_permalink(); ?>">View Project ›</a></strong></p>
+					<p class="read-more-link"><strong><a href="<?php the_permalink(); ?>">View Project ›</a></strong></p>
 				</aside>
 				<div class="case-study-images">
 					<a href="<?php the_permalink(); ?>">
