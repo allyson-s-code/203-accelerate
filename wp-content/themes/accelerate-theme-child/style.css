@@ -109,6 +109,34 @@ Text Domain:  accelerate-theme-child
   text-transform: uppercase;
 }
 
+/* --Footer-- */
+
+.social-media-navigation {
+  width: 100%;
+}
+
+.social-media-menu {
+  width: 50%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2.5rem 0 2.5rem 0;
+}
+
+.social-media-menu li {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: #3b3b3b;
+  padding: 5px;
+  text-align: center;
+}
+
+.social-media-menu i {
+  color: #fff;
+}
+
 /* --Single Case Studies-- */
 
 .case-study {
@@ -215,6 +243,19 @@ aside p {
 
   .blog-post h3 {
     text-align: left;
+  }
+
+  /* Footer */
+  .social-media-navigation {
+    width: 10%;
+  }
+
+  .social-media-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.86rem 0 0 0;
   }
 
   /* Single Case Study */
