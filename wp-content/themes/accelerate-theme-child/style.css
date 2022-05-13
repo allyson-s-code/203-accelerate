@@ -10,6 +10,10 @@ Tags:     	light, dark, two-columns, right-sidebar, responsive-layout, accessibi
 Text Domain:  accelerate-theme-child
 */
 
+h2 {
+  font-size: 1.56em;
+}
+
 .home-page {
   background: url("img/taxi-photo.jpg") no-repeat scroll right center / cover
     rgba(0, 0, 0, 0);
@@ -135,6 +139,7 @@ Text Domain:  accelerate-theme-child
 
 .social-media-menu i {
   color: #fff;
+  background: none;
 }
 
 /* --Single Case Studies-- */
@@ -160,7 +165,6 @@ aside.case-study-sidebar {
 }
 
 aside h2 {
-  font-size: 1.5rem;
   font-weight: 600;
   font-family: "Open Sans", sans-serif;
   margin: 0;
@@ -201,6 +205,7 @@ aside p {
 }
 
 /* --Archive Case Studies-- */
+
 .case-study {
   width: 100%;
   display: flex;
@@ -208,6 +213,35 @@ aside p {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+/* --Contact Page-- */
+
+#primary.site-content:not(.site-content.sidebar) h2 {
+  margin: 1.4rem 0;
+  line-height: 1.2;
+}
+
+form {
+  margin-top: 3.125rem;
+}
+
+#nf-label-field-1,
+#nf-label-field-2,
+#nf-label-field-3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.nf-field-element input,
+.nf-field-element textarea {
+  border: 1px solid #bfbfbf;
+}
+
+.nf-field-element input[type="button"] {
+  background-color: #45ac9d;
+  padding: 1.1em 4.8em;
+  float: right;
 }
 
 /* Media Queries */
@@ -295,5 +329,33 @@ aside p {
     height: auto;
     margin: 2.2rem 0;
     padding: 0;
+  }
+
+  /* --Contact Page-- */
+
+  #primary.site-content:not(.site-content.sidebar) {
+    width: 615px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nf-form-cont {
+    width: 615px;
+  }
+
+  nf-fields-wrap {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  nf-field {
+    width: 48%;
+  }
+
+  nf-field:nth-child(3n),
+  nf-field:nth-child(4n) {
+    width: 100%;
   }
 }
