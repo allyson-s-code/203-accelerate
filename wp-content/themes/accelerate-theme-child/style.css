@@ -135,6 +135,9 @@ h2 {
   background-color: #3b3b3b;
   padding: 5px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .social-media-menu i {
@@ -217,7 +220,7 @@ aside p {
 
 /* --Contact Page-- */
 
-#primary.site-content:not(.site-content.sidebar) h2 {
+#primary.site-content.narrow h2 {
   margin: 1.4rem 0;
   line-height: 1.2;
 }
@@ -242,6 +245,99 @@ form {
   background-color: #45ac9d;
   padding: 1.1em 4.8em;
   float: right;
+}
+
+.nf-response-msg p {
+  font-weight: 700;
+  margin: 2.5em 0;
+}
+
+/* --About Page-- */
+
+.about-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero {
+  width: 100%;
+  background: url("img/taxi-photo.jpg") no-repeat scroll right center / cover
+    rgba(0, 0, 0, 0);
+}
+
+.wp-block-group__inner-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.about-hero h2 {
+  width: 90%;
+  color: #fff;
+  font-weight: 600;
+}
+
+.services-intro {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.wp-block-group__inner-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.services-intro h4 {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.services {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.services-wrapper {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.services-wrapper ul {
+  list-style: none;
+  margin: 0;
+}
+
+.about-contact {
+  border-top: 1px solid #bfbfbf;
+  padding: 3.43em 0 3em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-contact h2 {
+  margin: 0 0 1em 0;
+  line-height: 1.4;
 }
 
 /* Media Queries */
@@ -333,7 +429,7 @@ form {
 
   /* --Contact Page-- */
 
-  #primary.site-content:not(.site-content.sidebar) {
+  #primary.site-content.narrow {
     width: 615px;
     display: flex;
     justify-content: center;
