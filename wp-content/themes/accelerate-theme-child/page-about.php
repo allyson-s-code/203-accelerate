@@ -36,17 +36,21 @@ get_header(); ?>
                         } ?>
                         
                     </figure>
-
-                    <h2><?php echo $service; ?></h2>
-                    <p><?php echo $description; ?></p>
+                    <div class="service-text-wrapper">
+                        <h2><?php echo $service; ?></h2>
+                        <p><?php echo $description; ?></p>
+                    </div>
+                    
                 </li>        
                 <?php endwhile; ?>
                 <?php wp_reset_query(); ?>
                 
             </ul>
             <div class="about-contact">
-                <h2>Interested in working with us?</h2>
-				<a class="button" href="<?php echo site_url('/contact-us/') ?>">Contact Us</a>
+                <div class="about-contact-wrapper">
+                    <h2>Interested in working with us?</h2>
+                    <a class="button" href="<?php echo site_url('/contact-us/') ?>">Contact Us</a>
+                </div>
             </div>
         </div>
     
