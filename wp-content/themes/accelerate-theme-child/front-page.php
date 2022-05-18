@@ -21,6 +21,8 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 		</div><!-- .main-content -->
 	</div><!-- #primary -->
+    
+    <!-- Featured Work -->
     <section class="featured-work">
         <div class="site-content">
             <h4>Featured Work</h4>
@@ -47,10 +49,12 @@ get_header(); ?>
     
     </section>
     
-    
-    
-    <section class="recent-posts">
-        <div class="site-content">
+   
+    <div class="homepage-recent site-content">
+
+        <!-- Recent Blog Post -->
+        <section class="recent-posts">
+            
             <div class="blog-post"> 
                 <h4>From the Blog</h4>
                 <?php query_posts('posts_per_page=1'); ?>
@@ -60,7 +64,29 @@ get_header(); ?>
                     <?php endwhile; ?>
                 <?php wp_reset_query(); ?>
             </div>
-        </div>
-    </section>
+            
+        </section>
+
+        <!-- Recent Tweet -->
+        <section class="recent-tweet">
+            <div class="tweet">
+                <h4>Recent Tweet</h4>
+                <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+                <div id="secondary" class="widget-area" role="complementary">
+                    <?php dynamic_sidebar( 'sidebar-2' ); ?>
+                </div>
+                <?php endif; ?>
+
+                <div class="read-more-link">
+                    <a href="<?php echo home_url(); ?>//twitter.com/WITWomen">
+                        <span>Follow Us</span> &rsaquo; 
+                    </a>
+                </div>
+            </div>    
+            
+        </section>
+    </div>
+    
+    
 
 <?php get_footer(); ?>

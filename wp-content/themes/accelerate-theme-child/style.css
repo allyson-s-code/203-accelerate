@@ -35,6 +35,7 @@ h2 {
   background: none repeat scroll 0 0 #45ac9d;
 }
 
+/* --Featured Work-- */
 #featured-work {
   display: flex;
   justify-content: center;
@@ -43,8 +44,8 @@ h2 {
 
 .site-content {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-between;
   align-items: flex-start;
 }
 
@@ -81,14 +82,17 @@ h2 {
   margin: 1.25em 0 3.5em 0;
 }
 
-.blog-post {
+/* --Recent Blog Post & Tweet-- */
+
+/* --styles that apply to both-- */
+.blog-post,
+div.tweet {
   width: 100%;
-  float: center;
   margin-bottom: 2em;
-  clear: both;
 }
 
-.blog-post h4 {
+.blog-post h4,
+.recent-tweet h4 {
   font: 700 1em/1.75 "Montserrat", "Open Sans", Arial, sans-serif;
   color: #a6a6a6;
   text-transform: uppercase;
@@ -96,14 +100,11 @@ h2 {
   text-align: center;
 }
 
-.blog-post h3 {
+.blog-post h3,
+.recent-tweet h3 {
   font-size: 1.5em;
   text-align: center;
-}
-
-.blog-post p {
-  color: #3b3b3b;
-  margin: 1.75em 0 2.75em 0;
+  margin: 2.8rem 0 0 0;
 }
 
 .read-more-link {
@@ -111,6 +112,30 @@ h2 {
   font-weight: 700;
   color: #45ac9d;
   text-transform: uppercase;
+}
+
+/* -- Blog Post --*/
+.blog-post p {
+  color: #3b3b3b;
+  margin: 1.75em 0 2.75em 0;
+}
+
+/* -- Tweet --*/
+.ctf-item {
+  width: 100%;
+  padding: 0 !important;
+  margin: 1.75em 0 2.75em 0;
+}
+
+.ctf-tweet-text {
+  font-size: 1em;
+  color: #3b3b3b;
+  line-height: 1.65 !important;
+}
+
+#ctf.ctf-narrow .ctf-tweet-content {
+  padding: 0;
+  margin: 0;
 }
 
 /* --Footer-- */
@@ -379,7 +404,8 @@ form {
   padding: 60px 0;
 }
 .error-text-wrapper h1 {
-  font-size: 2rem;
+  font-family: "Londrina Solid", "Montserrat", "Open Sans", Arial, sans-serif;
+  font-size: 2.5rem;
   color: #45ac9d;
   font-weight: 600;
   line-height: 1.4;
@@ -416,17 +442,18 @@ form {
     justify-content: flex-start;
   }
 
-  .blog-post {
-    width: 50%;
-    float: left;
-    clear: both;
+  .recent-posts,
+  .recent-tweet {
+    width: 45%;
   }
 
-  .blog-post h4 {
+  .blog-post h4,
+  .tweet h4 {
     text-align: left;
   }
 
-  .blog-post h3 {
+  .blog-post h3,
+  .tweet h3 {
     text-align: left;
   }
 
@@ -617,7 +644,7 @@ form {
   }
 
   .error-text-wrapper h1 {
-    font-size: 2.15rem;
+    font-size: 3rem;
     color: #45ac9d;
     margin: 0;
   }
