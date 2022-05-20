@@ -104,7 +104,7 @@ div.tweet {
 .recent-tweet h3 {
   font-size: 1.5em;
   text-align: center;
-  margin: 2.8rem 0 0 0;
+  margin: 1.78em 0 0 0;
 }
 
 .read-more-link {
@@ -145,7 +145,7 @@ div.tweet {
 }
 
 .social-media-menu {
-  width: 50%;
+  width: 30%;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -393,6 +393,27 @@ form {
   line-height: 1.4;
 }
 
+/* ----Blog Post---- */
+/* -Social Sharing Widget- */
+
+.social-sharing-wrapper {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.sfsi_widget {
+  width: 100%;
+  height: auto;
+}
+
+.norm_row.sfsi_wDiv {
+  width: 155px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  float: right;
+}
 /* -------404-------- */
 
 .error-page {
@@ -622,7 +643,86 @@ form {
     justify-content: center;
     align-items: center;
   }
-  /* -------404-------- */
+
+  /* ------- Sidebar Styles -------- */
+  .index-page#sidebar {
+    width: 33%;
+  }
+
+  .index-page .main-content {
+    width: 62%;
+  }
+
+  /* --Newsletter Sign Up--- */
+
+  #mc4wp-form-1 {
+    margin-top: 0;
+  }
+
+  #mc4wp_form_widget-2 h2 {
+    margin-bottom: 0;
+  }
+
+  .mc4wp-form-fields p {
+    font-weight: 600;
+    margin: 1.64em 0;
+  }
+
+  .mc4wp-form-fields label {
+    margin-bottom: 1.18em;
+  }
+
+  .mc4wp-form-fields input[type="text"],
+  .mc4wp-form-fields input[type="email"] {
+    width: 100%;
+    height: 40px;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    font-size: 1.25rem;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: none repeat scroll 0 0 #45ac9d;
+    margin: 2em 0;
+  }
+
+  /* ----Search Widget---- */
+
+  #searchform.searchform {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  #sidebar .widget_search {
+    border-top: 1px solid #bfbfbf;
+    padding: 1.75em 1.8em;
+  }
+
+  #searchform {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+  }
+
+  #searchsubmit {
+    margin: 0;
+  }
+  /* ----Blog Post---- */
+  /* -Social Sharing Widget- */
+
+  .social-sharing-wrapper {
+    float: right;
+    width: 100%;
+  }
+
+  /* -------404 Page-------- */
 
   .site-content.error-content {
     display: flex;
