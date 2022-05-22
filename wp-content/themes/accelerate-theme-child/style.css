@@ -393,13 +393,17 @@ form {
   line-height: 1.4;
 }
 
-/* ----Blog Post---- */
+/* ----Blog Page---- */
 /* -Social Sharing Widget- */
 
 .social-sharing-wrapper {
   width: 100%;
   height: auto;
   margin: 20px 0;
+}
+
+.sfsi_tool_tip_2 {
+  width: 100%;
 }
 
 .sfsi_widget {
