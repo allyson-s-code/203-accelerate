@@ -1,17 +1,23 @@
 @font-face {
-	font-family: "Gotham";
-	font-weight: 600;
-	font-style: normal;
-	src: url("fonts/GothamBook.woff") format("woff"), url("fonts/GothamBook.woff2") format("woff2");
-	font-display: swap;
+  font-family: 'Gotham';
+  src: url('fonts/gotham/Gotham-Light.eot');
+  src: url('fonts/gotham/Gotham-Light.eot?#iefix') format('embedded-opentype'),
+      url('fonts/gotham/Gotham-Light.woff2') format('woff2'),
+      url('fonts/gotham/Gotham-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-	font-family: "Gotham";
-	font-weight: 700;
-	font-style: normal;
-	src: url("fonts/GothamBold.woff") format("woff"), url("fonts/GothamBold.woff2") format("woff2");
-	font-display: swap;
+  font-family: 'Gotham';
+  src: url('fonts/gotham/Gotham-Bold.eot');
+  src: url('fonts/gotham/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
+      url('fonts/gotham/Gotham-Bold.woff2') format('woff2'),
+      url('fonts/gotham/Gotham-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 .some-container {
@@ -30,8 +36,9 @@
 	transform: translate(208px, 246px);
 	font-size: 11px;
 	line-height: 14px;
-	font-weight: 600;
-	font-family: "Gotham", "Arial", sans-serif;
+	font-family: 'Gotham', 'Arial', sans-serif;
+  font-weight: 300;
+  font-style: normal;
 	--main-color: #3eac4d;
 	-webkit-transition: -webkit-transform 0.5s ease-in-out 0s;
 	transition: -webkit-transform 0.5s ease-in-out 0s;

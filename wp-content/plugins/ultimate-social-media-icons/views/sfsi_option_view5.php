@@ -4,6 +4,10 @@
 	$option3	= maybe_unserialize(get_option('sfsi_section3_options',false));
 	$option5	= maybe_unserialize(get_option('sfsi_section5_options',false));
 	$custom_icons_order = unserialize($option5['sfsi_CustomIcons_order']);
+
+	$prev_plugin_version = maybe_unserialize(get_option('sfsi_was_installed_before', '0'));
+	$was_installed_before = version_compare(SFSI_PLUGIN_VERSION, $prev_plugin_version) >= 0;
+
 	if(!isset($option5['sfsi_telegramIcon_order'])){
 		$option5['sfsi_telegramIcon_order']    = '11';
     }
@@ -34,6 +38,9 @@
 	if(!isset($option5['sfsi_tiktokIcon_order'])){
 		$option5['sfsi_tiktokIcon_order']    = '20';
     }
+	if(!isset($option5['sfsi_mastodonIcon_order'])){
+		$option5['sfsi_mastodonIcon_order']    = '21';
+	}
 
 	$icons_order = array(
 		$option5['sfsi_rssIcon_order']		=> 'rss',
@@ -54,9 +61,10 @@
 		$option5['sfsi_redditIcon_order']=> 'reddit',
 		$option5['sfsi_fbmessengerIcon_order']=> 'fbmessenger',
 		$option5['sfsi_tiktokIcon_order']=> 'tiktok',
+		$option5['sfsi_mastodonIcon_order']=> 'mastodon',
 
 	);
-	
+
 	/*
 	 * Sanitize, escape and validate values
 	 */
@@ -71,7 +79,7 @@
 														: '';
 	$option5['sfsi_icons_Alignment_via_widget'] = 	(isset($option5['sfsi_icons_Alignment_via_widget']))
 														? sanitize_text_field($option5['sfsi_icons_Alignment_via_widget'])
-														: '';	
+														: '';
 	$option5['sfsi_icons_Alignment_via_shortcode'] 	= 	(isset($option5['sfsi_icons_Alignment_via_shortcode']))
 														? sanitize_text_field($option5['sfsi_icons_Alignment_via_shortcode'])
 														: '';
@@ -80,7 +88,10 @@
 														: '';
 	$option5['sfsi_icons_ClickPageOpen']		= 	(isset($option5['sfsi_icons_ClickPageOpen']))
 														? sanitize_text_field($option5['sfsi_icons_ClickPageOpen'])
-														:'';	
+														:'';
+	$option5['sfsi_icons_AddNoopener']		= 	(isset($option5['sfsi_icons_AddNoopener']))
+														? sanitize_text_field($option5['sfsi_icons_AddNoopener'])
+														:'';
 	$option5['sfsi_icons_stick'] 				= 	(isset($option5['sfsi_icons_stick']))
 														? sanitize_text_field($option5['sfsi_icons_stick'])
 														: '';
@@ -126,13 +137,38 @@
 	$option5['sfsi_whatsapp_MouseOverText']		= 	(isset($option5['sfsi_whatsapp_MouseOverText']))
 														? sanitize_text_field($option5['sfsi_whatsapp_MouseOverText'])
 														: '';
+
+	$option5['sfsi_reddit_MouseOverText']		= 	(isset($option5['sfsi_reddit_MouseOverText']))
+														? sanitize_text_field($option5['sfsi_reddit_MouseOverText'])
+														: '';
+
+	$option5['sfsi_fbmessenger_MouseOverText']		= 	(isset($option5['sfsi_fbmessenger_MouseOverText']))
+														? sanitize_text_field($option5['sfsi_fbmessenger_MouseOverText'])
+														: '';
+
+	$option5['sfsi_tiktok_MouseOverText']		= 	(isset($option5['sfsi_tiktok_MouseOverText']))
+														? sanitize_text_field($option5['sfsi_tiktok_MouseOverText'])
+														: '';
+
+	$option5['sfsi_mastodon_MouseOverText']		= 	(isset($option5['sfsi_mastodon_MouseOverText']))
+														? sanitize_text_field($option5['sfsi_mastodon_MouseOverText'])
+														: '';
+
+	$option5['sfsi_snapchat_MouseOverText']		= 	(isset($option5['sfsi_snapchat_MouseOverText']))
+														? sanitize_text_field($option5['sfsi_snapchat_MouseOverText'])
+														: '';
+
 	$sfsi_icons_suppress_errors 				=   (isset($option5['sfsi_icons_suppress_errors']))
 														? sanitize_text_field($option5['sfsi_icons_suppress_errors'])
 														: 'no';
+	$sfsi_show_admin_popup 					=   (isset($option5['sfsi_show_admin_popup']))
+														? sanitize_text_field($option5['sfsi_show_admin_popup'])
+														: 'yes';
 	$sfsi_icons_sharing_and_traffic_tips 				=   (isset($option5['sfsi_icons_sharing_and_traffic_tips']))
-	? sanitize_text_field($option5['sfsi_icons_sharing_and_traffic_tips'])
-	: 'yes';
-	if(is_array($custom_icons_order) ) 
+															? sanitize_text_field($option5['sfsi_icons_sharing_and_traffic_tips'])
+															: 'yes';
+	
+	if(is_array($custom_icons_order) )
 	{
 		foreach($custom_icons_order as $data)
 		{
@@ -145,13 +181,13 @@
 <!-- Section 5 "Any other wishes for your main icons?" main div Start -->
 <div class="tab5">
 <h4><?php _e( 'Order of your icons', 'ultimate-social-media-icons' ); ?></h4>
-    <!-- icon drag drop  section start here -->	
+    <!-- icon drag drop  section start here -->
     <ul class="share_icon_order" >
-        <?php 
+        <?php
 	 	$ctn = 0;
 	 	foreach($icons_order as $index=>$icn) :
 
-		  switch ($icn) : 
+		  switch ($icn) :
           case 'rss' :?>
             	 <li class="rss_section" data-index="<?php echo $index; ?>" id="sfsi_rssIcon_order">
                 	<a href="#" title="RSS"><img src="<?php echo SFSI_PLUGURL; ?>images/rss.png" alt="RSS" /></a>
@@ -211,7 +247,7 @@
 		  <?php break; ?><?php case 'snapchat' :?>
           		<li class="snapchat_section " data-index="<?php echo $index; ?>" id="sfsi_snapchatIcon_order">
                 	<a href="#" title="snapchat" ><img src="<?php echo SFSI_PLUGURL; ?>images/icons_theme/default/default_snapchat.png" height="54px;" alt="snapchat" /></a>
-				</li>	
+				</li>
 		  <?php break; ?><?php case 'reddit' :?>
           		<li class="reddit_section " data-index="<?php echo $index; ?>" id="sfsi_redditIcon_order">
                 	<a href="#" title="reddit" ><img src="<?php echo SFSI_PLUGURL; ?>images/icons_theme/default/default_reddit.png" height="54px;" alt="reddit" /></a>
@@ -224,25 +260,29 @@
           		<li class="tiktok_section " data-index="<?php echo $index; ?>" id="sfsi_tiktokIcon_order">
                 	<a href="#" title="tiktok" ><img src="<?php echo SFSI_PLUGURL; ?>images/icons_theme/default/default_tiktok.png" height="54px;" alt="tiktok" /></a>
                 </li>
+		  <?php break; ?><?php case 'mastodon' :?>
+			<li class="mastodon_section " data-index="<?php echo $index; ?>" id="sfsi_mastodonIcon_order">
+				<a href="#" title="mastodon" ><img src="<?php echo SFSI_PLUGURL; ?>images/icons_theme/default/default_mastodon.png" height="54px;" alt="mastodon" /></a>
+			</li>
 		  <?php break; ?><?php default   :?><?php if(isset($icons[$icn['ele']]) && !empty($icons[$icn['ele']]) && filter_var($icons[$icn['ele']], FILTER_VALIDATE_URL) ): ?>
           		<li class="custom_iconOrder sfsiICON_<?php echo $icn['ele']; ?>" data-index="<?php echo $index; ?>" element-id="<?php echo $icn['ele']; ?>" >
                 	<a href="#" title="Custom Icon" ><img src="<?php echo $icons[$icn['ele']]; ?>" alt="Linked In" class="sfcm" /></a>
-                </li> 
-                <?php endif; ?><?php break; ?><?php  endswitch; ?><?php endforeach; ?> 
-     
+                </li>
+                <?php endif; ?><?php break; ?><?php  endswitch; ?><?php endforeach; ?>
+
     </ul> <!-- END icon drag drop section start here -->
 
     <span class="drag_drp">
 		<?php _e( '(Drag &amp; Drop)', 'ultimate-social-media-icons' ); ?>
 	</span>
-    
-    <!-- icon's size and spacing section start here -->	
+
+    <!-- icon's size and spacing section start here -->
     <div class="row">
 		<h4><?php _e( 'Size &amp; spacing of your icons', 'ultimate-social-media-icons' ); ?></h4>
 		<div class="icons_size d-flex align-items-center"><span><?php _e("Size:",'ultimate-social-media-icons' ) ?></span><input name="sfsi_icons_size" value="<?php echo ( $option5['sfsi_icons_size']!='' ) ?  $option5['sfsi_icons_size'] : '' ;?>" type="text" /><ins><?php _e("pixels wide ",'ultimate-social-media-icons' ) ?> &amp; <?php _e(" tall",'ultimate-social-media-icons' ) ?></ins> <span class="last"><?php _e("Spacing between icons:",'ultimate-social-media-icons' ) ?></span><input name="sfsi_icons_spacing" type="text" value="<?php echo ( $option5['sfsi_icons_spacing']!='' ) ?  $option5['sfsi_icons_spacing'] : '' ;?>" /><ins><?php _e( 'Pixels', 'ultimate-social-media-icons' ) ?></ins></div>
 
-		<div class="icons_prem_disc">			
-			<p class="sfsi_prem_plu_desc"><?php 
+		<div class="icons_prem_disc">
+			<p class="sfsi_prem_plu_desc"><?php
                 printf(
                     __( '%1$sNew:%2$s The Premium Plugin also allows you to define the vertical distance between the icons (and set this differently for mobile vs. desktop): %3$sGo premium now%4$s or learn more.%5$s','ultimate-social-media-icons' ),
                     '<b>',
@@ -254,7 +294,7 @@
             ?></p>
 		</div>
     </div>
-    
+
     <div class="row" style="font-size: 17px;">
 		<h4><?php _e( 'Alignments', 'ultimate-social-media-icons' ); ?></h4>
 		<div class="icons_size" style="width: max-content;display:flow-root">
@@ -265,7 +305,7 @@
 		<div class="icons_size" style="width: max-content;">
 			<div style="width: 232px;float: left;position: relative;">
 			<span style="line-height: 26px;margin-bottom: 22px;font-size: 17px;"><?php _e( 'Alignment of icons within a widget:', 'ultimate-social-media-icons' ); ?></span>
-				
+
 			</div>
 			<div class="field">
 				<select name="sfsi_icons_Alignment_via_widget" id="sfsi_icons_Alignment_via_widget" class="styled">
@@ -339,9 +379,9 @@
     $visit_iconsUrl = SFSI_PLUGURL . "images/visit_icons/";
 
     function sfsi_selectoption( $name, $follow, $visitme ) {
-		
+
 		$option5 =  maybe_unserialize( get_option( 'sfsi_section5_options', false ) );
-		
+
 		$visit_iconsUrl = SFSI_PLUGURL . "images/visit_icons/";
 		if ( $name == "sfsi_follow_icons_language" ) {
 			$visit_icon = $visit_iconsUrl . "Follow";
@@ -628,7 +668,7 @@
 		if ( !isset( $option5['sfsi_youtube_icons_language'] ) ) {
 			$option5['sfsi_youtube_icons_language'] = "Visit_us_en_US";
 		}
-		
+
 		$visit_icon = $visit_iconsUrl . "Visit_us_youtube";
 		?>
 
@@ -979,7 +1019,7 @@
 						Swedish<span> - << </span> <span><?php _e( 'Visit us', 'ultimate-social-media-icons' ); ?></span><span> >> </span>
 					</option>
 				</select>
-				
+
 			</div>
 			<div class="preview-btn">
 				<span><?php _e( 'Preview:', 'ultimate-social-media-icons' ); ?></span>
@@ -1197,21 +1237,37 @@
       	</div>
     </div>
 
-   
-     <!-- icon's floating and stick section start here -->	
+	<div class="row new_wind usmi-noopener" <?php if (!$was_installed_before || $option5['sfsi_icons_ClickPageOpen'] == 'no') echo 'style="display: none;"'; ?> >
+		<h4><?php _e( 'Add noopener to external links?', 'ultimate-social-media-icons' ) ?></h4>
+		<div class="row_onl"><p><?php _e( 'Increases your site security.', 'ultimate-social-media-icons' ) ?>
+		</p>
+			<ul class="enough_waffling">
+				<li>
+					<input name="sfsi_icons_AddNoopener" <?php echo ( $option5['sfsi_icons_ClickPageOpen'] == 'yes' && $option5['sfsi_icons_AddNoopener'] == 'yes' ) ? 'checked="true"' : '' ;?> type="radio" value="yes" class="styled" />
+					<label><?php _e( 'Yes', 'ultimate-social-media-icons' ) ?></label>
+				</li>
+				<li>
+					<input name="sfsi_icons_AddNoopener" <?php echo ( !($option5['sfsi_icons_ClickPageOpen'] == 'yes' && $option5['sfsi_icons_AddNoopener'] == 'yes' )) ? 'checked="true"' : '' ;?> type="radio" value="no" class="styled" />
+					<label><?php _e( 'No', 'ultimate-social-media-icons' ) ?></label>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+     <!-- icon's floating and stick section start here -->
     <div class="row sticking">
-	
+
 		<h4><?php _e( 'Sticky icons', 'ultimate-social-media-icons' ) ?></h4>
-		
+
 		<div class="clear float_options" <?php if($option5['sfsi_icons_stick'] == 'yes') :?> style="display:none" <?php endif;?>>
-		</div> 
-	
+		</div>
+
 	<div class="space">
-		
+
 		<p class="list"><?php _e( 'Make icons stick?', 'ultimate-social-media-icons' ) ?></p>
 
 		<ul class="enough_waffling">
-			
+
 			<li>
 				<input name="sfsi_icons_stick" <?php echo ( $option5['sfsi_icons_stick'] == 'yes' ) ? 'checked="true"' : '' ;?> type="radio" value="yes" class="styled" />
 				<label><?php _e( 'Yes', 'ultimate-social-media-icons' ) ?></label>
@@ -1224,8 +1280,8 @@
 
 		</ul>
 
-		
-		<p><?php 
+
+		<p><?php
 			printf(
 				__( 'If you select «Yes» here, then the icons which you placed via %1$swidget%2$s or %3$sshortcode%4$s will still be visible on the screen as user scrolls down your page, i.e. they will stick at the top.', 'ultimate-social-media-icons' ),
 				'<span style="text-decoration: underline;"><b>',
@@ -1234,8 +1290,8 @@
 				'</b></span>'
 			);
 		?></p>
-		
-		<p><?php 
+
+		<p><?php
 			printf(
 				__( 'This is not to be confused with making the icons permanently placed in the same position, which is possible in the %1$s Premium Plugin.%2$s', 'ultimate-social-media-icons' ),
 				'<a target="_blank" href="https://www.ultimatelysocial.com/usm-premium"><b>',
@@ -1254,7 +1310,7 @@
 		<h4><?php _e( 'Sharing texts & pictures?', 'ultimate-social-media-icons' ) ?></h4>
 		<p><?php _e( 'On the pages where you edit your posts/pages, you’ll see a (new) section where you can define which pictures & text should be shared. This extra section is displayed on the following:', 'ultimate-social-media-icons' ) ?></p>
 
-		<?php 
+		<?php
 			$checkedS   = ( isset( $option5['sfsi_custom_social_hide'] ) && $option5['sfsi_custom_social_hide'] == "yes" ) ? 'checked="checked"': '';
 			$checked    = ( isset( $option5['sfsi_custom_social_hide'] ) && $option5['sfsi_custom_social_hide'] == "yes" ) ? '': 'checked="checked"';
 			$checkedVal = isset( $option5['sfsi_custom_social_hide'] ) ? $option5['sfsi_custom_social_hide']: 'no';
@@ -1316,7 +1372,7 @@
 		<div class="mouseover_field email_section">
 			<label><?php _e("Email:",'ultimate-social-media-icons' ) ?></label><input name="sfsi_email_MouseOverText" value="<?php echo ( $option5['sfsi_email_MouseOverText']!='' ) ?  $option5['sfsi_email_MouseOverText'] : '' ;?>" type="text" />
 		</div>
-		
+
 		<div class="clear">
 		<div class="mouseover_field twitter_section">
 			<label><?php _e("Twitter:",'ultimate-social-media-icons' ) ?></label>
@@ -1342,17 +1398,21 @@
 				<label><?php _e("WhatsApp:",'ultimate-social-media-icons' ) ?></label>
 				<input name="sfsi_whatsapp_MouseOverText" value="<?php echo ( $option5['sfsi_whatsapp_MouseOverText']!='' ) ?  $option5['sfsi_whatsapp_MouseOverText'] : '' ;?>" type="text" />
 	    	</div>
+			<div class="mouseover_field weibo_section">
+				<label><?php _e("Weibo:",'ultimate-social-media-icons' ) ?></label>
+				<input name="sfsi_weibo_MouseOverText" value="<?php echo ( $option5['sfsi_weibo_MouseOverText']!='' ) ?  $option5['sfsi_weibo_MouseOverText'] : '' ;?>" type="text" />
+			</div>
 		</div>
 
 		<div class="clear">
-		<div class="mouseover_field pinterest_section">
-			<label><?php _e("Pinterest:",'ultimate-social-media-icons' ) ?></label>
-			<input name="sfsi_pinterest_MouseOverText" value="<?php echo ( $option5['sfsi_pinterest_MouseOverText']!='' ) ?  $option5['sfsi_pinterest_MouseOverText'] : '' ;?>" type="text" />
-		</div>
-		<div class="mouseover_field youtube_section">
-			<label><?php _e("Youtube:",'ultimate-social-media-icons' ) ?></label>
-			<input name="sfsi_youtube_MouseOverText" value="<?php echo ( $option5['sfsi_youtube_MouseOverText']!='' ) ?  $option5['sfsi_youtube_MouseOverText'] : '' ;?>" type="text" />
-		</div>
+			<div class="mouseover_field pinterest_section">
+				<label><?php _e("Pinterest:",'ultimate-social-media-icons' ) ?></label>
+				<input name="sfsi_pinterest_MouseOverText" value="<?php echo ( $option5['sfsi_pinterest_MouseOverText']!='' ) ?  $option5['sfsi_pinterest_MouseOverText'] : '' ;?>" type="text" />
+			</div>
+			<div class="mouseover_field youtube_section">
+				<label><?php _e("Youtube:",'ultimate-social-media-icons' ) ?></label>
+				<input name="sfsi_youtube_MouseOverText" value="<?php echo ( $option5['sfsi_youtube_MouseOverText']!='' ) ?  $option5['sfsi_youtube_MouseOverText'] : '' ;?>" type="text" />
+			</div>
 		</div>
 		<div class="clear">
 		    <div class="mouseover_field instagram_section">
@@ -1374,31 +1434,58 @@
 				<input name="sfsi_ok_MouseOverText" value="<?php echo ( $option5['sfsi_ok_MouseOverText']!='' ) ?  $option5['sfsi_ok_MouseOverText'] : '' ;?>" type="text" />
 		    </div>
 		</div>
+
 		<div class="clear">
-		    <div class="mouseover_field weibo_section">
-				<label><?php _e("Weibo:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_weibo_MouseOverText" value="<?php echo ( $option5['sfsi_weibo_MouseOverText']!='' ) ?  $option5['sfsi_weibo_MouseOverText'] : '' ;?>" type="text" />
+			<div class="mouseover_field reddit_section">
+				<label><?php _e("Reddit:",'ultimate-social-media-icons' ) ?></label>
+				<input name="sfsi_reddit_MouseOverText" value="<?php echo ( $option5['sfsi_reddit_MouseOverText']!='' ) ?  $option5['sfsi_reddit_MouseOverText'] : '' ;?>" type="text" />
 			</div>
-			
+			<div class="mouseover_field fbmessenger_section">
+				<label><?php _e("Fb Messenger:",'ultimate-social-media-icons' ) ?></label>
+				<input name="sfsi_fbmessenger_MouseOverText" value="<?php echo ( $option5['sfsi_fbmessenger_MouseOverText']!='' ) ?  $option5['sfsi_fbmessenger_MouseOverText'] : '' ;?>" type="text" />
+			</div>
 		</div>
-        <div class="clear"> </div>  
+
+		<div class="clear">
+			<div class="mouseover_field viber_section">
+				<label><?php _e("Tiktok:",'ultimate-social-media-icons' ) ?></label>
+				<input name="sfsi_tiktok_MouseOverText" value="<?php echo ( $option5['sfsi_tiktok_MouseOverText']!='' ) ?  $option5['sfsi_tiktok_MouseOverText'] : '' ;?>" type="text" />
+			</div>
+			<div class="mouseover_field xing_section">
+				<label><?php _e("Snapchat:",'ultimate-social-media-icons' ) ?></label>
+				<input name="sfsi_snapchat_MouseOverText" value="<?php echo ( $option5['sfsi_snapchat_MouseOverText']!='' ) ?  $option5['sfsi_snapchat_MouseOverText'] : '' ;?>" type="text" />
+			</div>
+		</div>
+
+		<div class="clear">
+			<div class="mouseover_field mastodon_section">
+				<label><?php _e("Mastodon:",'ultimate-social-media-icons' ) ?></label>
+				<input name="sfsi_mastodon_MouseOverText" value="<?php echo ( $option5['sfsi_mastodon_MouseOverText']!='' ) ?  $option5['sfsi_mastodon_MouseOverText'] : '' ;?>" type="text" />
+			</div>
+		</div>
+
 		<div class="custom_m">
-        	<?php 
+        	<?php
                 $sfsiMouseOverTexts =  unserialize($option5['sfsi_custom_MouseOverTexts']);
-                $count = 1; for($i=$first_key; $i <= $endkey; $i++) :
+                $count = 1; 
+			for($i=$first_key; $i <= $endkey; $i++) :
             ?><?php if(!empty( $icons[$i])) : ?>
+
+				<?php if($count === 1 || $count - 1 % 2==0): ?>
+					<div class="clear">
+				<?php endif; ?>
                 
                 <div class="mouseover_field custom_section sfsiICON_<?php echo $i; ?>">
                     <label><?php _e("Custom",'ultimate-social-media-icons' ) ?> <?php echo $count; ?>:</label>
                     <input name="sfsi_custom_MouseOverTexts[]" value="<?php echo (isset($sfsiMouseOverTexts[$i]) && $sfsiMouseOverTexts[$i]!='' ) ?sanitize_text_field($sfsiMouseOverTexts[$i]) : '' ;?>" type="text" file-id="<?php echo $i; ?>" />
                 </div>
-                  
+
                 <?php if($count%2==0): ?>
-                
-                <div class="clear"> </div>  
-            <?php endif; ?><?php $count++; endif; endfor; ?>
+                	</div>  
+            	<?php endif; ?>
+
+			<?php $count++; endif; endfor; ?>
 		</div>
-		
 	</div>
 
 	</div>
@@ -1420,6 +1507,22 @@
 	</div>
 
 	<div class="row new_wind">
+		<h4><?php _e( 'Support widget', 'ultimate-social-media-icons' ); ?></h4>
+		<div class="row_onl"><p><?php _e( 'Show USM support widget on front end?', 'ultimate-social-media-icons' ) ?></p>
+			<ul class="enough_waffling">
+		    	<li>
+		    		<input name="sfsi_show_admin_popup" <?php echo ( $sfsi_show_admin_popup == 'yes' ) ? 'checked="true"' : '' ;?> type="radio" value="yes" class="styled" />
+		    		<label><?php _e( 'Yes', 'ultimate-social-media-icons' ); ?></label>
+		    	</li>
+				<li>
+					<input name="sfsi_show_admin_popup" <?php echo ( $sfsi_show_admin_popup == 'no' ) ? 'checked="true"' : '' ;?> type="radio" value="no" class="styled" />
+					<label><?php _e( 'No', 'ultimate-social-media-icons' ); ?></label>
+				</li>
+	      	</ul>
+      	</div>
+	</div>
+
+	<div class="row new_wind">
 		<h4><?php _e( 'Tips', 'ultimate-social-media-icons' ); ?></h4>
 		<div class="row_onl"><p><?php _e( 'Show more useful tips for more sharing & traffic?', 'ultimate-social-media-icons' ) ?></p>
 			<ul class="enough_waffling">
@@ -1434,7 +1537,11 @@
 	      	</ul>
       	</div>
 	</div>
-	
+
+	<div class="row new_wind">
+		<?php include(SFSI_DOCROOT . '/views/sfsi_option_view_tifm.php'); ?>
+	</div>
+
 	<!-- <div class="row new_wind">
 		<h4>Tips</h4>
 		<div class="row_onl"><p>Show useful tips for more sharing & traffic?</p>
@@ -1452,21 +1559,21 @@
     </div> -->
 
 	<?php sfsi_ask_for_help(5); ?>
-    <!-- SAVE BUTTON SECTION   --> 
+    <!-- SAVE BUTTON SECTION   -->
     <div class="save_button">
          <img src="<?php echo SFSI_PLUGURL ?>images/ajax-loader.gif" alt="error" class="loader-img" />
          <?php  $nonce = wp_create_nonce("update_step5"); ?>
          <a href="javascript:;" id="sfsi_save5" title="Save" data-nonce="<?php echo $nonce;?>"><?php _e("Save",'ultimate-social-media-icons' ) ?></a>
     </div>
     <!-- END SAVE BUTTON SECTION   -->
-    
+
     <a class="sfsiColbtn closeSec" href="javascript:;" ><?php _e("Collapse area",'ultimate-social-media-icons' ) ?></a>
     <label class="closeSec"></label>
-        
+
     <!-- ERROR AND SUCCESS MESSAGE AREA-->
     <p class="red_txt errorMsg" style="display:none"> </p>
     <p class="green_txt sucMsg" style="display:none"> </p>
     <div class="clear"></div>
-    
+
 </div>
 <!-- END Section 5 "Any other wishes for your main icons?"-->

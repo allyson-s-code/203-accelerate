@@ -88,14 +88,14 @@
                 <div>
                     <div class="row">
                         <div class="col-12 col-lg-8 col-xxl-10">
-                            <p class='sfsi-top-header-subheading font-italic'><?php 
+                            <p class='sfsi-top-header-subheading font-italic'><?php
                                 printf(
                                     __( 'Simply answer the questions below %1$s(at least the first 3)%2$s - that`s it!', 'ultimate-social-media-icons' ),
                                     '<span class="sfsi-top-banner-no-decoration">',
                                     '</span>'
                                 );
                             ?></p>
-                            <p><?php 
+                            <p><?php
                                 printf(
                                     __( 'If you face any issue, please ask in %1$sSupport Forum%2$s. We\'ll try to respond quickly. Thank you!', 'ultimate-social-media-icons' ),
                                     '<a target="_blank" href="http://bit.ly/USM_SUPPORT_FORUM" class="sfsi-top-banner-no-decoration text-success">',
@@ -104,7 +104,7 @@
                             ?></p>
                             <div class="d-none d-lg-flex row">
                                 <div class="col-9 col-xxl-10">
-                                    <p class="sfsi-top-banner-higligted-text"><?php 
+                                    <p class="sfsi-top-banner-higligted-text"><?php
                                         printf(
                                             __( 'If you want %1$smore likes & shares%2$s, more placement options, better sharing features (eg: define the text and image that gets shared), optimization for mobile, %3$smore icon design styles,%4$sanimated icons,%5$sthemed icons,%6$s and %7$smuch more%8$s, then %9$sgo premium%10$s.', 'ultimate-social-media-icons' ),
                                             '<span class="font-weight-bold font-italic">',
@@ -160,7 +160,7 @@
         </div>
         <div class="d-lg-none row">
             <div class="col">
-                <p class="sfsi-top-banner-higligted-text"><?php 
+                <p class="sfsi-top-banner-higligted-text"><?php
                     printf(
                         __( 'If you want %1$smore likes & shares%2$s, more placement options, better sharing features (eg: define the text and image that gets shared), optimization for mobile, %3$smore icon design styles,%4$sanimated icons,%5$sthemed icons,%6$s and %7$smuch more%8$s, then %9$sgo premium%10$s.', 'ultimate-social-media-icons' ),
                         '<span class="font-weight-bold font-italic">',
@@ -205,13 +205,13 @@
 
     <div id="accordion1">
 
-        
+
 
         <!-- step 4 start here -->
         <h3><span>4</span><?php _e("What design  ",'ultimate-social-media-icons') ?>&amp; <?php _e("animation do you want to give your icons?",'ultimate-social-media-icons') ?></h3>
         <?php  include(SFSI_DOCROOT . '/views/sfsi_option_view3.php'); ?>
         <!-- step 4 END here -->
-        
+
 
         <!-- step 5 Start here -->
         <h3><span>5</span><?php _e("Do you want to display 'counts' next to your icons? ",'ultimate-social-media-icons') ?></h3>
@@ -219,7 +219,7 @@
         <!-- step 5 END here -->
 
         <!-- step 6 Start here -->
-        <h3><span>6</span><?php _e("Any other wishes for your main icons?",'ultimate-social-media-icons') ?></h3>
+        <h3 class="sfsi_tifm_module_menu_block"><span>6</span><?php _e("Any other wishes for your main icons?",'ultimate-social-media-icons') ?></h3>
         <?php  include(SFSI_DOCROOT . '/views/sfsi_option_view5.php'); ?>
         <!-- step 6 END here -->
 
@@ -227,7 +227,7 @@
         <h3 id="usm-normalize-h3-7p"><span>7</span><?php _e("Do you want to display a pop-up, asking people to subscribe?",'ultimate-social-media-icons') ?></h3>
         <?php include(SFSI_DOCROOT . '/views/sfsi_option_view7.php'); ?>
         <!-- step 7 END here -->
-       
+
         <!-- step 8 Start here -->
         <h3><span>8</span><?php _e("Do you want to show a subscription form (",'ultimate-social-media-icons') ?><b><?php _e("increases sign ups",'ultimate-social-media-icons') ?></b>)?</h3>
         <?php  include(SFSI_DOCROOT . '/views/sfsi_option_view8.php'); ?>
@@ -242,7 +242,7 @@
 
     </div>
 
-    <div class="tab10">
+    <div class="tab11">
         <div class="save_export">
             <div class="save_button">
                 <img src="<?php echo SFSI_PLUGURL; ?>images/ajax-loader.gif" class="loader-img" alt="error" />
@@ -262,7 +262,7 @@
         <p class="red_txt errorMsg" style="display:none;font-size:21px"> </p>
         <p class="green_txt sucMsg" style="display:none;font-size:21px"> </p>
 
-        <?php 
+        <?php
             // include(SFSI_DOCROOT . '/views/sfsi_affiliate_banner.php');
             include(SFSI_DOCROOT . '/views/sfsi_section_for_premium.php');
         ?>
@@ -324,3 +324,7 @@
         });
     </script>
     <?php include(SFSI_DOCROOT . '/views/sfsi_chat_on_admin_pannel.php'); ?>
+    <?php
+      echo "<br /><br /><br />";
+      do_action('ins_global_print_carrousel');
+    ?>

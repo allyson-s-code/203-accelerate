@@ -1,5 +1,5 @@
 <?php
-// Creating the widget 
+// Creating the widget
 class subscriber_widget extends WP_Widget {
 
 	function __construct() {
@@ -32,7 +32,7 @@ class subscriber_widget extends WP_Widget {
 		echo $args['after_widget'];
 	}
 
-	// Widget Backend 
+	// Widget Backend
 	public function form($instance)
 	{
 		if (isset($instance['title'])) {

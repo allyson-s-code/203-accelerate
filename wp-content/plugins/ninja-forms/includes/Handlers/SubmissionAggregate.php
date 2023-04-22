@@ -283,13 +283,7 @@ class SubmissionAggregate
 
                 if(!empty($fieldOptionDefinition)){
                     foreach($fieldOptionDefinition as $optionDefinition){
-                        $options = [
-                            'label'=> $optionDefinition['label'],
-                            'value'=> $optionDefinition['value'],
-                            'calc'=> $optionDefinition['calc'],
-                            'selected'=> $optionDefinition['selected'],
-                            'order'=> $optionDefinition['order']
-                         ];
+                        $options = $this->extractOptionsFromDefinition($optionDefinition);
 
                          $optionsCollection[]=$options;
                     }
@@ -313,6 +307,29 @@ class SubmissionAggregate
             }
 
         }
+    }
+
+    /**
+     * Extract option array from a given array
+     * 
+     * Ensures that required defaults are set if missing in incoming array
+     *
+     * @param array $optionDefinition
+     * @return array
+     */
+    protected function extractOptionsFromDefinition(array $optionDefinition): array
+    {
+        $defaults = [
+            'label' => '',
+            'value' => '',
+            'calc' => '',
+            'selected' => 0,
+            'order' => 0
+        ];
+
+        $return = array_merge($defaults, \array_intersect_key($optionDefinition, $defaults));
+
+        return $return;
     }
 
     /**
@@ -397,5 +414,24 @@ class SubmissionAggregate
     public function getMasterFormId(): string
     {
         return $this->masterFormId;
+    }
+
+    /**
+     * Set keyed collection of submissions
+     *
+     * This method enables re-setting the aggregated submissions after
+     * performing array methods on it.  This is useful to get a subset of the
+     * collection without needing to re-filter and run DB requests
+     *
+     * @param  Array  $aggregatedSubmissions  Keyed collection of
+     * submissions meeting the filtering parameters
+     *
+     * @return  self
+     */ 
+    public function setAggregatedSubmissions(Array $aggregatedSubmissions)
+    {
+        $this->aggregatedSubmissions = $aggregatedSubmissions;
+
+        return $this;
     }
 }

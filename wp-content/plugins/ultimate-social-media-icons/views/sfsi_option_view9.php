@@ -1,17 +1,17 @@
 <div class="tab9">
-    <p class="sfsi-small-title" id="sfsi-tab9">
+    <p class="sfsi-small-title" id="sfsi-tab10">
         <?php _e( 'Let us consult you if you placed the icons in the best possible way for most shares & traffic.', 'ultimate-social-media-icons' ); ?>
     </p>
     <h4><?php _e( 'Simply:', 'ultimate-social-media-icons' ); ?></h4>
     <ul class="sfsi-small-list">
-        <li><?php 
+        <li><?php
             printf(
                 __( '1. Go to the %1$ssupport forum%2$s', 'ultimate-social-media-icons' ),
                 '<a href="https://goo.gl/auxJ9C#no-topic-0" target="_blank">',
                 '</a>'
             );
         ?></li>
-        <li><?php 
+        <li><?php
             printf(
                 __( '2. Add a new topic titled e.g. %1$s“Advice for Your-website-url.com”%2$s', 'ultimate-social-media-icons' ),
                 '<b>',
@@ -22,7 +22,7 @@
     </ul>
     <div class="question-banner">
         <div class="question-banner__wrap">
-            <p class="question-banner__text blur-bg"><?php 
+            <p class="question-banner__text blur-bg"><?php
                 printf(
                     __( 'This review is %1$s100&#37; free%2$s and offered to you as courtesy of Ultimatelysocial.com', 'ultimate-social-media-icons' ),
                     '<span class="text--special text--bold">',

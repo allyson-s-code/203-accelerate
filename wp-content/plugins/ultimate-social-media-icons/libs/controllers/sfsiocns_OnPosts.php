@@ -70,6 +70,8 @@ function sfsi_social_buttons_below( $content ) {
 			/* check if option activated in admin or not */
 			if ( $sfsi_section9["sfsi_show_via_afterposts"] == "yes" && $sfsi_section6["sfsi_display_button_type"] == "standard_buttons" ) {
 				$permalink = add_query_arg( $_GET ? $_GET : array(), get_permalink( $post->ID ) );
+				$permalink = esc_url( $permalink );
+				
 				$title = get_the_title();
 				$sfsiLikeWith = "45px;";
 				/* check for counter display */
@@ -342,7 +344,7 @@ function sfsi_FBlike($permalink, $show_count)
 function sfsiFB_Share_Custom($permalink, $show_count = false)
 {
 	$shareurl = "https://www.facebook.com/sharer/sharer.php?u=";
-	$shareurl = $shareurl . urlencode(urldecode($permalink));
+	$shareurl = $shareurl . $permalink;
 
 	$option5 = maybe_unserialize( get_option( 'sfsi_section5_options', false ) );
 
@@ -684,7 +686,13 @@ function sfsi_footer_script() {
 				$sfsi_anchor_div_style .= 'width:' . $sfsi_responsive_icons['settings']['icon_width_size'] . 'px;';
 			} else {
 				$sfsi_anchor_style .= " flex-basis:100%;";
-				$sfsi_anchor_div_style .= " width:100%;";
+				
+				// If the current URL has param 'page=sfsi-options' then set the width to 100% else set it to auto.
+				if ( isset( $_GET['page'] ) && 'sfsi-options' === strtolower($_GET['page']) ) {
+					$sfsi_anchor_div_style .= 'width:100%;';
+				} else {
+					$sfsi_anchor_div_style .= 'width:auto;';
+				}
 			}
 
 			foreach ($sfsi_responsive_icons['default_icons'] as $icon => $icon_config) {

@@ -1,3 +1,37 @@
+##### [Version 0.13.5](https://github.com/codeinwp/wp-menu-icons/compare/v0.13.4...v0.13.5) (2023-03-30)
+
+- Updated Dependencies and WordPress core tested up to version 6.2
+
+##### [Version 0.13.4](https://github.com/codeinwp/wp-menu-icons/compare/v0.13.3...v0.13.4) (2023-03-01)
+
+Update dependencies
+
+##### [Version 0.13.3](https://github.com/codeinwp/wp-menu-icons/compare/v0.13.2...v0.13.3) (2023-02-25)
+
+- Fix img width/height value, props @Htbaa 
+- Update dependencies
+
+##### [Version 0.13.2](https://github.com/codeinwp/wp-menu-icons/compare/v0.13.1...v0.13.2) (2022-11-24)
+
+* Fix - update dependencies
+
+##### [Version 0.13.1](https://github.com/codeinwp/wp-menu-icons/compare/v0.13.0...v0.13.1) (2022-11-04)
+
+Tested with the WordPress 6.1 version
+
+#### [Version 0.13.0](https://github.com/codeinwp/wp-menu-icons/compare/v0.12.12...v0.13.0) (2022-08-23)
+
+* Fix Neve upsells showing up inconsistently on edge cases
+* Fix inconsistency with Font Awesome 5 and adds compatibility with 6th version
+* Fix compatibility with JupiterX 
+* Update dependencies
+
+##### [Version 0.12.12](https://github.com/codeinwp/wp-menu-icons/compare/v0.12.11...v0.12.12) (2022-05-27)
+
+- Fix the style handler conflict issue which breaks the arrow icon of the submenus on some themes
+- Fix dismiss dashboard notice issue on some edge cases
+- Fix compatibility with the Max Mega Menu plugin
+
 ##### [Version 0.12.11](https://github.com/codeinwp/wp-menu-icons/compare/v0.12.10...v0.12.11) (2022-03-16)
 
 Add font awesome 5 support
