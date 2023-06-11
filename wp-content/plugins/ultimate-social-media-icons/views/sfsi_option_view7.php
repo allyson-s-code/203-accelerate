@@ -49,11 +49,11 @@ $option7['sfsi_Shown_pop'] 				= (isset($option7['sfsi_Shown_pop'])) ? sanitize_
 		<div id="sfsi_firsttime_offer" class="sfsi_new_prmium_follw  sfsi_banner_body">
 			<div>
 				<p>
-					<?php 
+					<?php
 							printf(
 								__( 'Update: if you want many more features for your pop-ups, have a look at %1s MyPopUps. %2s','ultimate-social-media-icons' ),
 								'<a target="_blank" href="https://sellcodes.com/s/3NmlIE" style="color:#1a1d20 !important;font-weight: bold;border-bottom: 1px solid #1a1d20;">',
-								'</a>'       
+								'</a>'
 							);
 					?>
 				</p>
@@ -317,7 +317,7 @@ $option7['sfsi_Shown_pop'] 				= (isset($option7['sfsi_Shown_pop'])) ? sanitize_
 
 				<label><?php _e("Text:",'ultimate-social-media-icons') ?></label>
 
-				<input class="mkPop" name="sfsi_popup_text" type="text" value="<?php echo ($option7['sfsi_popup_text'] != '') ?  $option7['sfsi_popup_text'] : ''; ?>" />
+				<input class="mkPop" name="sfsi_popup_text" type="text" value="<?php echo ($option7['sfsi_popup_text'] != '') ? esc_attr($option7['sfsi_popup_text']) : ''; ?>" />
 
 			</div>
 
@@ -387,7 +387,7 @@ $option7['sfsi_Shown_pop'] 				= (isset($option7['sfsi_Shown_pop'])) ? sanitize_
 
 				<label><?php _e("Font color:",'ultimate-social-media-icons') ?></label>
 				<div class="" style="padding-top:10px;">
-					<input name="sfsi_popup_fontColor" data-default-color="#b5b5b5" id="sfsi_popup_fontColor" type="text" value="<?php echo ($option7['sfsi_popup_fontColor'] != '') ?  $option7['sfsi_popup_fontColor'] : ''; ?>" />
+					<input name="sfsi_popup_fontColor" data-default-color="#b5b5b5" id="sfsi_popup_fontColor" type="text" value="<?php echo ($option7['sfsi_popup_fontColor'] != '') ? esc_attr($option7['sfsi_popup_fontColor']) : ''; ?>" />
 				</div>
 			</div>
 
@@ -395,7 +395,7 @@ $option7['sfsi_Shown_pop'] 				= (isset($option7['sfsi_Shown_pop'])) ? sanitize_
 
 			<label><?php _e("Font size:",'ultimate-social-media-icons') ?></label>
 
-				<input name="sfsi_popup_fontSize" type="text" value="<?php echo ($option7['sfsi_popup_fontSize'] != '') ?  $option7['sfsi_popup_fontSize'] : ''; ?>" class="small" />
+				<input name="sfsi_popup_fontSize" type="text" value="<?php echo ($option7['sfsi_popup_fontSize'] != '') ? esc_attr($option7['sfsi_popup_fontSize']) : ''; ?>" class="small" />
 
 			</div>
 
@@ -409,7 +409,7 @@ $option7['sfsi_Shown_pop'] 				= (isset($option7['sfsi_Shown_pop'])) ? sanitize_
 
 				<label><?php _e("Background",'ultimate-social-media-icons') ?><br /><?php _e("Color:",'ultimate-social-media-icons') ?></label>
 				<div class="" style="padding-top:5px;">
-					<input name="sfsi_popup_background_color" data-default-color="#b5b5b5" id="sfsi_popup_background_color" type="text" value="<?php echo ($option7['sfsi_popup_background_color'] != '') ?  $option7['sfsi_popup_background_color'] : ''; ?>" />
+					<input name="sfsi_popup_background_color" data-default-color="#b5b5b5" id="sfsi_popup_background_color" type="text" value="<?php echo ($option7['sfsi_popup_background_color'] != '') ?  esc_attr($option7['sfsi_popup_background_color']) : ''; ?>" />
 				</div>
 
 			</div>
@@ -418,7 +418,7 @@ $option7['sfsi_Shown_pop'] 				= (isset($option7['sfsi_Shown_pop'])) ? sanitize_
 
 				<label class="border"><?php _e("Border Color:",'ultimate-social-media-icons') ?></label>
 				<div class="" style="padding-top:10px;">
-					<input name="sfsi_popup_border_color" data-default-color="#b5b5b5" id="sfsi_popup_border_color" type="text" value="<?php echo ($option7['sfsi_popup_border_color'] != '') ?  $option7['sfsi_popup_border_color'] : ''; ?>" />
+					<input name="sfsi_popup_border_color" data-default-color="#b5b5b5" id="sfsi_popup_border_color" type="text" value="<?php echo ($option7['sfsi_popup_border_color'] != '') ?  esc_attr($option7['sfsi_popup_border_color']) : ''; ?>" />
 				</div>
 
 			</div>
@@ -429,7 +429,7 @@ $option7['sfsi_Shown_pop'] 				= (isset($option7['sfsi_Shown_pop'])) ? sanitize_
 
 				<div class="field" style="margin-top:0px;">
 
-					<input name="sfsi_popup_border_thickness" type="text" value="<?php echo ($option7['sfsi_popup_border_thickness'] != '') ?  $option7['sfsi_popup_border_thickness'] : ''; ?>" class="small" />
+					<input name="sfsi_popup_border_thickness" type="text" value="<?php echo ($option7['sfsi_popup_border_thickness'] != '') ? esc_attr($option7['sfsi_popup_border_thickness']) : ''; ?>" class="small" />
 
 				</div>
 
@@ -560,7 +560,7 @@ $option7['sfsi_Shown_pop'] 				= (isset($option7['sfsi_Shown_pop'])) ? sanitize_
 		<h4><?php _e("When shall the pop-up be shown?",'ultimate-social-media-icons') ?></h4>
 
 		<div class="pop_up_show">
-			<input name="sfsi_Shown_pop" <?php echo ($option7['sfsi_Shown_pop'] == 'once') ?  'checked="true"' : ''; ?> type="checkbox" value="once" class="styled" /><label><?php _e("Once",'ultimate-social-media-icons') ?> <input name="sfsi_Shown_popupOnceTime" type="text" value="<?php echo ($option7['sfsi_Shown_popupOnceTime'] != '') ?  $option7['sfsi_Shown_popupOnceTime'] : ''; ?>" class="seconds" /> <?php _e("seconds after the user arrived on the site",'ultimate-social-media-icons') ?></label>
+			<input name="sfsi_Shown_pop" <?php echo ($option7['sfsi_Shown_pop'] == 'once') ?  'checked="true"' : ''; ?> type="checkbox" value="once" class="styled" /><label><?php _e("Once",'ultimate-social-media-icons') ?> <input name="sfsi_Shown_popupOnceTime" type="text" value="<?php echo ($option7['sfsi_Shown_popupOnceTime'] != '') ? esc_attr($option7['sfsi_Shown_popupOnceTime']) : ''; ?>" class="seconds" /> <?php _e("seconds after the user arrived on the site",'ultimate-social-media-icons') ?></label>
 		</div>
 		<div class="pop_up_show">
 			<input name="sfsi_Shown_pop" <?php echo ($option7['sfsi_Shown_pop'] == 'ETscroll') ?  'checked="true"' : ''; ?> type="checkbox" value="ETscroll" class="styled" /><label><?php _e("Every time user scrolls to the end of the page",'ultimate-social-media-icons') ?></label>

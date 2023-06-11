@@ -167,7 +167,7 @@
 	$sfsi_icons_sharing_and_traffic_tips 				=   (isset($option5['sfsi_icons_sharing_and_traffic_tips']))
 															? sanitize_text_field($option5['sfsi_icons_sharing_and_traffic_tips'])
 															: 'yes';
-	
+
 	if(is_array($custom_icons_order) )
 	{
 		foreach($custom_icons_order as $data)
@@ -279,7 +279,7 @@
     <!-- icon's size and spacing section start here -->
     <div class="row">
 		<h4><?php _e( 'Size &amp; spacing of your icons', 'ultimate-social-media-icons' ); ?></h4>
-		<div class="icons_size d-flex align-items-center"><span><?php _e("Size:",'ultimate-social-media-icons' ) ?></span><input name="sfsi_icons_size" value="<?php echo ( $option5['sfsi_icons_size']!='' ) ?  $option5['sfsi_icons_size'] : '' ;?>" type="text" /><ins><?php _e("pixels wide ",'ultimate-social-media-icons' ) ?> &amp; <?php _e(" tall",'ultimate-social-media-icons' ) ?></ins> <span class="last"><?php _e("Spacing between icons:",'ultimate-social-media-icons' ) ?></span><input name="sfsi_icons_spacing" type="text" value="<?php echo ( $option5['sfsi_icons_spacing']!='' ) ?  $option5['sfsi_icons_spacing'] : '' ;?>" /><ins><?php _e( 'Pixels', 'ultimate-social-media-icons' ) ?></ins></div>
+		<div class="icons_size d-flex align-items-center"><span><?php _e("Size:",'ultimate-social-media-icons' ) ?></span><input name="sfsi_icons_size" value="<?php echo ( $option5['sfsi_icons_size']!='' ) ?  esc_attr($option5['sfsi_icons_size']) : '' ;?>" type="text" /><ins><?php _e("pixels wide ",'ultimate-social-media-icons' ) ?> &amp; <?php _e(" tall",'ultimate-social-media-icons' ) ?></ins> <span class="last"><?php _e("Spacing between icons:",'ultimate-social-media-icons' ) ?></span><input name="sfsi_icons_spacing" type="text" value="<?php echo ( $option5['sfsi_icons_spacing']!='' ) ?  esc_attr($option5['sfsi_icons_spacing']) : '' ;?>" /><ins><?php _e( 'Pixels', 'ultimate-social-media-icons' ) ?></ins></div>
 
 		<div class="icons_prem_disc">
 			<p class="sfsi_prem_plu_desc"><?php
@@ -299,7 +299,7 @@
 		<h4><?php _e( 'Alignments', 'ultimate-social-media-icons' ); ?></h4>
 		<div class="icons_size" style="width: max-content;display:flow-root">
 			<span style="font-size: 17px;"><?php _e( 'Icons per row:', 'ultimate-social-media-icons' ); ?></span>
-			<input name="sfsi_icons_perRow" type="text" value="<?php echo ( $option5['sfsi_icons_perRow'] != '' ) ? $option5['sfsi_icons_perRow'] : ''; ?>" />
+			<input name="sfsi_icons_perRow" type="text" value="<?php echo ( $option5['sfsi_icons_perRow'] != '' ) ? esc_attr($option5['sfsi_icons_perRow']) : ''; ?>" />
 			<ins class="leave_empty" style="margin-bottom: 34px;font-size: 17px;"><?php _e( 'Leave empty if you don\'t want to', 'ultimate-social-media-icons' ) ?> <br /><?php _e( 'define this', 'ultimate-social-media-icons' ) ?> </ins>
 		</div>
 		<div class="icons_size" style="width: max-content;">
@@ -1367,121 +1367,121 @@
 	<div class="space">
 		<div class="clear"></div>
 		<div class="mouseover_field rss_section">
-			<label><?php _e("RSS:",'ultimate-social-media-icons' ) ?></label><input name="sfsi_rss_MouseOverText" value="<?php echo ( $option5['sfsi_rss_MouseOverText']!='' ) ?  $option5['sfsi_rss_MouseOverText'] : '' ;?>" type="text" />
+			<label><?php _e("RSS:",'ultimate-social-media-icons' ) ?></label><input name="sfsi_rss_MouseOverText" value="<?php echo ( $option5['sfsi_rss_MouseOverText']!='' ) ? esc_attr($option5['sfsi_rss_MouseOverText']) : '' ;?>" type="text" />
 		</div>
 		<div class="mouseover_field email_section">
-			<label><?php _e("Email:",'ultimate-social-media-icons' ) ?></label><input name="sfsi_email_MouseOverText" value="<?php echo ( $option5['sfsi_email_MouseOverText']!='' ) ?  $option5['sfsi_email_MouseOverText'] : '' ;?>" type="text" />
+			<label><?php _e("Email:",'ultimate-social-media-icons' ) ?></label><input name="sfsi_email_MouseOverText" value="<?php echo ( $option5['sfsi_email_MouseOverText']!='' ) ?  esc_attr($option5['sfsi_email_MouseOverText']) : '' ;?>" type="text" />
 		</div>
 
 		<div class="clear">
 		<div class="mouseover_field twitter_section">
 			<label><?php _e("Twitter:",'ultimate-social-media-icons' ) ?></label>
-			<input name="sfsi_twitter_MouseOverText" value="<?php echo ( $option5['sfsi_twitter_MouseOverText']!='' ) ?  $option5['sfsi_twitter_MouseOverText'] : '' ;?>" type="text" />
+			<input name="sfsi_twitter_MouseOverText" value="<?php echo ( $option5['sfsi_twitter_MouseOverText']!='' ) ? esc_attr($option5['sfsi_twitter_MouseOverText']) : '' ;?>" type="text" />
 		</div>
 		<div class="mouseover_field facebook_section">
 			<label><?php _e("Facebook:",'ultimate-social-media-icons' ) ?></label>
-			<input name="sfsi_facebook_MouseOverText" value="<?php echo ( $option5['sfsi_facebook_MouseOverText']!='' ) ?  $option5['sfsi_facebook_MouseOverText'] : '' ;?>" type="text" />
+			<input name="sfsi_facebook_MouseOverText" value="<?php echo ( $option5['sfsi_facebook_MouseOverText']!='' ) ? esc_attr($option5['sfsi_facebook_MouseOverText']) : '' ;?>" type="text" />
 		</div>
 		</div>
 		<div class="clear">
 		<div class="mouseover_field linkedin_section">
 			<label><?php _e("LinkedIn:",'ultimate-social-media-icons' ) ?></label>
-			<input name="sfsi_linkedIn_MouseOverText" value="<?php echo ( $option5['sfsi_linkedIn_MouseOverText']!='' ) ?  $option5['sfsi_linkedIn_MouseOverText'] : '' ;?>"  type="text" />
+			<input name="sfsi_linkedIn_MouseOverText" value="<?php echo ( $option5['sfsi_linkedIn_MouseOverText']!='' ) ? esc_attr($option5['sfsi_linkedIn_MouseOverText']) : '' ;?>"  type="text" />
 		</div>
 		<div class="mouseover_field wechat_section">
 				<label><?php _e("WeChat:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_wechat_MouseOverText" value="<?php echo ( $option5['sfsi_wechat_MouseOverText']!='' ) ?  $option5['sfsi_wechat_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_wechat_MouseOverText" value="<?php echo ( $option5['sfsi_wechat_MouseOverText']!='' ) ? esc_attr($option5['sfsi_wechat_MouseOverText']) : '' ;?>" type="text" />
 		    </div>
 		</div>
 		<div class="clear">
 			<div class="mouseover_field whatsapp_section">
 				<label><?php _e("WhatsApp:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_whatsapp_MouseOverText" value="<?php echo ( $option5['sfsi_whatsapp_MouseOverText']!='' ) ?  $option5['sfsi_whatsapp_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_whatsapp_MouseOverText" value="<?php echo ( $option5['sfsi_whatsapp_MouseOverText']!='' ) ? esc_attr($option5['sfsi_whatsapp_MouseOverText']) : '' ;?>" type="text" />
 	    	</div>
 			<div class="mouseover_field weibo_section">
 				<label><?php _e("Weibo:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_weibo_MouseOverText" value="<?php echo ( $option5['sfsi_weibo_MouseOverText']!='' ) ?  $option5['sfsi_weibo_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_weibo_MouseOverText" value="<?php echo ( $option5['sfsi_weibo_MouseOverText']!='' ) ? esc_attr($option5['sfsi_weibo_MouseOverText']) : '' ;?>" type="text" />
 			</div>
 		</div>
 
 		<div class="clear">
 			<div class="mouseover_field pinterest_section">
 				<label><?php _e("Pinterest:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_pinterest_MouseOverText" value="<?php echo ( $option5['sfsi_pinterest_MouseOverText']!='' ) ?  $option5['sfsi_pinterest_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_pinterest_MouseOverText" value="<?php echo ( $option5['sfsi_pinterest_MouseOverText']!='' ) ? esc_attr($option5['sfsi_pinterest_MouseOverText']) : '' ;?>" type="text" />
 			</div>
 			<div class="mouseover_field youtube_section">
 				<label><?php _e("Youtube:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_youtube_MouseOverText" value="<?php echo ( $option5['sfsi_youtube_MouseOverText']!='' ) ?  $option5['sfsi_youtube_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_youtube_MouseOverText" value="<?php echo ( $option5['sfsi_youtube_MouseOverText']!='' ) ? esc_attr($option5['sfsi_youtube_MouseOverText']) : '' ;?>" type="text" />
 			</div>
 		</div>
 		<div class="clear">
 		    <div class="mouseover_field instagram_section">
 				<label><?php _e("Instagram:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_instagram_MouseOverText" value="<?php echo ( $option5['sfsi_instagram_MouseOverText']!='' ) ?  $option5['sfsi_instagram_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_instagram_MouseOverText" value="<?php echo ( $option5['sfsi_instagram_MouseOverText']!='' ) ? esc_attr($option5['sfsi_instagram_MouseOverText']) : '' ;?>" type="text" />
 			</div>
 			<div class="mouseover_field telegram_section">
 				<label><?php _e("Telegram:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_telegram_MouseOverText" value="<?php echo ( $option5['sfsi_telegram_MouseOverText']!='' ) ?  $option5['sfsi_telegram_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_telegram_MouseOverText" value="<?php echo ( $option5['sfsi_telegram_MouseOverText']!='' ) ? esc_attr($option5['sfsi_telegram_MouseOverText']) : '' ;?>" type="text" />
 		    </div>
 		</div>
 		<div class="clear">
 		    <div class="mouseover_field vk_section">
 				<label><?php _e("VK:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_vk_MouseOverText" value="<?php echo ( $option5['sfsi_vk_MouseOverText']!='' ) ?  $option5['sfsi_vk_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_vk_MouseOverText" value="<?php echo ( $option5['sfsi_vk_MouseOverText']!='' ) ? esc_attr($option5['sfsi_vk_MouseOverText']) : '' ;?>" type="text" />
 			</div>
 			<div class="mouseover_field ok_section">
 				<label><?php _e("Ok:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_ok_MouseOverText" value="<?php echo ( $option5['sfsi_ok_MouseOverText']!='' ) ?  $option5['sfsi_ok_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_ok_MouseOverText" value="<?php echo ( $option5['sfsi_ok_MouseOverText']!='' ) ? esc_attr($option5['sfsi_ok_MouseOverText']) : '' ;?>" type="text" />
 		    </div>
 		</div>
 
 		<div class="clear">
 			<div class="mouseover_field reddit_section">
 				<label><?php _e("Reddit:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_reddit_MouseOverText" value="<?php echo ( $option5['sfsi_reddit_MouseOverText']!='' ) ?  $option5['sfsi_reddit_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_reddit_MouseOverText" value="<?php echo ( $option5['sfsi_reddit_MouseOverText']!='' ) ? esc_attr($option5['sfsi_reddit_MouseOverText']) : '' ;?>" type="text" />
 			</div>
 			<div class="mouseover_field fbmessenger_section">
 				<label><?php _e("Fb Messenger:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_fbmessenger_MouseOverText" value="<?php echo ( $option5['sfsi_fbmessenger_MouseOverText']!='' ) ?  $option5['sfsi_fbmessenger_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_fbmessenger_MouseOverText" value="<?php echo ( $option5['sfsi_fbmessenger_MouseOverText']!='' ) ? esc_attr($option5['sfsi_fbmessenger_MouseOverText']) : '' ;?>" type="text" />
 			</div>
 		</div>
 
 		<div class="clear">
 			<div class="mouseover_field viber_section">
 				<label><?php _e("Tiktok:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_tiktok_MouseOverText" value="<?php echo ( $option5['sfsi_tiktok_MouseOverText']!='' ) ?  $option5['sfsi_tiktok_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_tiktok_MouseOverText" value="<?php echo ( $option5['sfsi_tiktok_MouseOverText']!='' ) ? esc_attr($option5['sfsi_tiktok_MouseOverText']) : '' ;?>" type="text" />
 			</div>
 			<div class="mouseover_field xing_section">
 				<label><?php _e("Snapchat:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_snapchat_MouseOverText" value="<?php echo ( $option5['sfsi_snapchat_MouseOverText']!='' ) ?  $option5['sfsi_snapchat_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_snapchat_MouseOverText" value="<?php echo ( $option5['sfsi_snapchat_MouseOverText']!='' ) ? esc_attr($option5['sfsi_snapchat_MouseOverText']) : '' ;?>" type="text" />
 			</div>
 		</div>
 
 		<div class="clear">
 			<div class="mouseover_field mastodon_section">
 				<label><?php _e("Mastodon:",'ultimate-social-media-icons' ) ?></label>
-				<input name="sfsi_mastodon_MouseOverText" value="<?php echo ( $option5['sfsi_mastodon_MouseOverText']!='' ) ?  $option5['sfsi_mastodon_MouseOverText'] : '' ;?>" type="text" />
+				<input name="sfsi_mastodon_MouseOverText" value="<?php echo ( $option5['sfsi_mastodon_MouseOverText']!='' ) ? esc_attr($option5['sfsi_mastodon_MouseOverText']) : '' ;?>" type="text" />
 			</div>
 		</div>
 
 		<div class="custom_m">
         	<?php
                 $sfsiMouseOverTexts =  unserialize($option5['sfsi_custom_MouseOverTexts']);
-                $count = 1; 
+                $count = 1;
 			for($i=$first_key; $i <= $endkey; $i++) :
             ?><?php if(!empty( $icons[$i])) : ?>
 
 				<?php if($count === 1 || $count - 1 % 2==0): ?>
 					<div class="clear">
 				<?php endif; ?>
-                
+
                 <div class="mouseover_field custom_section sfsiICON_<?php echo $i; ?>">
                     <label><?php _e("Custom",'ultimate-social-media-icons' ) ?> <?php echo $count; ?>:</label>
                     <input name="sfsi_custom_MouseOverTexts[]" value="<?php echo (isset($sfsiMouseOverTexts[$i]) && $sfsiMouseOverTexts[$i]!='' ) ?sanitize_text_field($sfsiMouseOverTexts[$i]) : '' ;?>" type="text" file-id="<?php echo $i; ?>" />
                 </div>
 
                 <?php if($count%2==0): ?>
-                	</div>  
+                	</div>
             	<?php endif; ?>
 
 			<?php $count++; endif; endfor; ?>

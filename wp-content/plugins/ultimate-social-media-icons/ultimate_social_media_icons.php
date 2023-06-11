@@ -7,7 +7,7 @@ Author: UltimatelySocial
 Author URI: http://ultimatelysocial.com
 Text Domain: ultimate-social-media-icons
 Domain Path: /languages
-Version: 2.8.1
+Version: 2.8.2
 License: GPLv2 or later
 */
 require_once 'analyst/main.php';
@@ -23,7 +23,7 @@ sfsi_error_reporting();
 
 global $wpdb;
 /* define the Root for URL and Document */
-define( 'SFSI_PLUGIN_VERSION', '2.8.1' );
+define( 'SFSI_PLUGIN_VERSION', '2.8.2' );
 define( 'SFSI_DOCROOT', dirname( __FILE__ ) );
 
 define( 'SFSI_PLUGURL', plugin_dir_url( __FILE__ ) );
@@ -2199,12 +2199,7 @@ function sfsi_plugin_redirect()
         }
 
       });
-
-      if (!(class_exists('\Inisev\Subs\InisevBlackFriday') || class_exists('Inisev\Subs\InisevBlackFriday') || class_exists('InisevBlackFriday'))) {
-        require_once __DIR__ . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . 'blackfriday2022' . DIRECTORY_SEPARATOR . 'bf.php';
-      }
-      $blackfriday_banner = new \Inisev\Subs\InisevBlackFriday('ultimate-social-media-icons', 'Ultimate Social Media Icons', 'http://bit.ly/3TVZQJ1', ['admin.php?page=sfsi-options']);
-
+      
       // Actions of tryOutPlugins
       if (!has_action('wp_ajax_tifm_save_decision')) {
         add_action('wp_ajax_tifm_save_decision', function () {

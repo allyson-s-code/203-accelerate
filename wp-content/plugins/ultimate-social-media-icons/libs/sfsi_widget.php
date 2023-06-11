@@ -1526,7 +1526,7 @@ class Sfsi_Widget extends WP_Widget
 					} else {
 						$sfsi_current_url = home_url( $wp->request );
 					}
-					
+
 					if ( isset( $sfsi_section5_options['sfsi_whatsapp_MouseOverText'] ) && !empty( $sfsi_section5_options['sfsi_whatsapp_MouseOverText'] ) ) {
 						$alt_text = $sfsi_section5_options['sfsi_whatsapp_MouseOverText'];
 					} else {
@@ -2210,14 +2210,15 @@ class Sfsi_Widget extends WP_Widget
 			?>
 			<style type="text/css">
 			<?php
-			if( !wp_is_mobile() ) {
-				if ( isset( $option9['sfsi_plus_sticky_bar'] ) && $option9['sfsi_plus_sticky_bar'] == 'yes' ) {
-					if ( isset( $option9['sfsi_plus_sticky_icons']['settings']['desktop'] ) && $option9['sfsi_plus_sticky_icons']['settings']['desktop'] == "yes" ) {
-						if ( isset( $option9['sfsi_plus_sticky_icons']['settings']['desktop_placement_direction'] ) && $option9['sfsi_plus_sticky_icons']['settings']['desktop_placement_direction'] == "down" ) {
-						?>.sfsi_premium_sticky_icons_container.sfsi_premium_sticky_down { top: calc(50% + <?php echo $option9['sfsi_plus_sticky_icons']['settings']['display_position']; ?>px); }
 
-						<?php } elseif ( isset($option9['sfsi_plus_sticky_icons']['settings']['desktop_placement_direction'] ) && ( $option9['sfsi_plus_sticky_icons']['settings']['desktop_placement_direction'] ) == "up" ) {
-						?>.sfsi_premium_sticky_icons_container.sfsi_premium_sticky_up { top: calc(50% - <?php echo $option9['sfsi_plus_sticky_icons']['settings']['display_position']; ?>px); }
+			if( !wp_is_mobile() ) {
+				if ( isset( $option9['sfsi_sticky_bar'] ) && $option9['sfsi_sticky_bar'] == 'yes' ) {
+					if ( isset( $option9['sfsi_sticky_icons']['settings']['desktop'] ) && $option9['sfsi_sticky_icons']['settings']['desktop'] == "yes" ) {
+						if ( isset( $option9['sfsi_sticky_icons']['settings']['desktop_placement_direction'] ) && $option9['sfsi_sticky_icons']['settings']['desktop_placement_direction'] == "down" ) {
+						?>.sfsi_premium_sticky_icons_container.sfsi_premium_sticky_down { top: calc(50% + <?php echo $option9['sfsi_sticky_icons']['settings']['display_position']; ?>px); }
+
+						<?php } elseif ( isset($option9['sfsi_sticky_icons']['settings']['desktop_placement_direction'] ) && ( $option9['sfsi_sticky_icons']['settings']['desktop_placement_direction'] ) == "up" ) {
+						?>.sfsi_premium_sticky_icons_container.sfsi_premium_sticky_up { top: calc(50% - <?php echo $option9['sfsi_sticky_icons']['settings']['display_position']; ?>px); }
 						<?php }
 					}
 				}

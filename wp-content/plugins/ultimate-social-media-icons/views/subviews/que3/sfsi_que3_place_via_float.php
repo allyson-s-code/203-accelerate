@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $option9['sfsi_icons_float']              = (isset($option9['sfsi_icons_float']))               ? sanitize_text_field($option9['sfsi_icons_float']): 'no';
 
@@ -85,23 +85,23 @@ $option9['sfsi_float_mobile_selection']     = ( isset( $option9['sfsi_float_mobi
 
                     <ul class="sfsi_floaticon_margin_sec">
                         <li class="d-flex align-items-center">
-                            <label class="mt-0"><?php _e( 'Top:', 'ultimate-social-media-icons' ); ?></label>                                
-                            <input name="sfsi_icons_floatMargin_top" type="text" value="<?php echo ( $option9['sfsi_icons_floatMargin_top'] != '' ) ? $option9['sfsi_icons_floatMargin_top'] : ''; ?>" />
+                            <label class="mt-0"><?php _e( 'Top:', 'ultimate-social-media-icons' ); ?></label>
+                            <input name="sfsi_icons_floatMargin_top" type="text" value="<?php echo ( $option9['sfsi_icons_floatMargin_top'] != '' ) ? esc_attr($option9['sfsi_icons_floatMargin_top']) : ''; ?>" />
                             <ins class="mt-0"><?php _e( 'Pixels', 'ultimate-social-media-icons' ); ?></ins>
                         </li>
                         <li class="d-flex align-items-center">
                             <label class="mt-0"><?php _e( 'Bottom:', 'ultimate-social-media-icons' ); ?></label>
-                            <input name="sfsi_icons_floatMargin_bottom" type="text" value="<?php echo ( $option9['sfsi_icons_floatMargin_bottom'] != '' ) ? $option9['sfsi_icons_floatMargin_bottom'] : ''; ?>" />
+                            <input name="sfsi_icons_floatMargin_bottom" type="text" value="<?php echo ( $option9['sfsi_icons_floatMargin_bottom'] != '' ) ? esc_attr($option9['sfsi_icons_floatMargin_bottom']) : ''; ?>" />
                             <ins class="mt-0"><?php _e( 'Pixels', 'ultimate-social-media-icons' ); ?></ins>
                         </li>
                         <li class="d-flex align-items-center">
                             <label class="mt-0"><?php _e( 'Left:', 'ultimate-social-media-icons' ); ?></label>
-                            <input name="sfsi_icons_floatMargin_left" type="text" value="<?php echo ( $option9['sfsi_icons_floatMargin_left'] != '' ) ? $option9['sfsi_icons_floatMargin_left'] : ''; ?>" />
+                            <input name="sfsi_icons_floatMargin_left" type="text" value="<?php echo ( $option9['sfsi_icons_floatMargin_left'] != '' ) ? esc_attr($option9['sfsi_icons_floatMargin_left']) : ''; ?>" />
                             <ins class="mt-0"><?php _e( 'Pixels', 'ultimate-social-media-icons' ); ?></ins>
                         </li>
                         <li class="d-flex align-items-center">
                             <label class="mt-0"><?php _e( 'Right:', 'ultimate-social-media-icons' ); ?></label>
-                            <input name="sfsi_icons_floatMargin_right" type="text" value="<?php echo ( $option9['sfsi_icons_floatMargin_right'] != '' ) ? $option9['sfsi_icons_floatMargin_right'] : ''; ?>" />
+                            <input name="sfsi_icons_floatMargin_right" type="text" value="<?php echo ( $option9['sfsi_icons_floatMargin_right'] != '' ) ? esc_attr($option9['sfsi_icons_floatMargin_right']) : ''; ?>" />
                             <ins class="mt-0"><?php _e( 'Pixels', 'ultimate-social-media-icons' ); ?></ins>
                         </li>
                     </ul>
@@ -109,7 +109,7 @@ $option9['sfsi_float_mobile_selection']     = ( isset( $option9['sfsi_float_mobi
 
                 <div style="width: 100%; float: left; margin:25px 0 0 25px;">
                     <h4 style="color: #5a6570 !important; font-family: 'helveticaneue-light';">
-                        <?php _e( 'Make icons…', 'ultimate-social-media-icons' ); ?> 
+                        <?php _e( 'Make icons…', 'ultimate-social-media-icons' ); ?>
                     </h4>
                     <ul class="sfsi_make_icons sfsi_premium_makeIcons_container" style="font-family: 'helveticaneue-light';">
                         <li>
@@ -171,7 +171,7 @@ $option9['sfsi_float_mobile_selection']     = ( isset( $option9['sfsi_float_mobi
                 </div>
                 <div class="sfsi_premium_sm_margin_form_m" style="width: 88%; float: left; margin:25px 0 0 25px">
                     <h4 style="color: #5a6570 !important;font-family: 'helveticaneue-light';">
-                        <?php _e( 'Need different selections for mobile?', 'ultimate-social-media-icons' ); ?> 
+                        <?php _e( 'Need different selections for mobile?', 'ultimate-social-media-icons' ); ?>
                     </h4>
                     <ul class="sfsi_make_icons sfsi_plus_mobile_float">
                         <li>

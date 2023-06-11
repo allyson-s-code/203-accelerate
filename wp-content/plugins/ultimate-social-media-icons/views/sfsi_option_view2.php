@@ -105,7 +105,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
 ?>
 
 <!-- Section 2 "What do you want the icons to do?" main div Start -->
-<div class="tab2">    
+<div class="tab2">
     <!-- RSS ICON -->
     <div class="row bdr_top rss_section">
         <h2 class="sfsicls_rs_s"><?php _e( 'RSS', 'ultimate-social-media-icons' ); ?></h2>
@@ -153,7 +153,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
                         </div>
                         <div class="sfsicnwrp">
                             <b><?php _e( 'Contact me: ', 'ultimate-social-media-icons' ); ?></b>
-                            <?php 
+                            <?php
                                 _e( 'If people click on the icon an email will open with your email address already entered. This makes sense to use if you don’t offer a contact option anywhere else.', 'ultimate-social-media-icons' );
                                 echo sfsi_premium_tooltip_content();
                             ?>
@@ -277,7 +277,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
                     <div class="sfsiicnsdvwrp" style="margin-right: 15px; width: auto;">
                         <span class="checkbox" style="background-position:0px 0px!important;width:31px"></span>
                     </div>
-                    <div class="sfsicnwrp" style="margin-top: 5px;"><?php 
+                    <div class="sfsicnwrp" style="margin-top: 5px;"><?php
                         _e( 'Follow me on Facebook', 'ultimate-social-media-icons' );
                         echo sfsi_premium_tooltip_content( 'tp-checkbox-link' );
                     ?></div>
@@ -304,7 +304,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
 
             <p class="radio_section fb_url" style="display:flow-root"><input name="sfsi_twitter_page" <?php echo ($option2['sfsi_twitter_page'] == 'yes') ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" /><label><?php _e( 'Visit me on Twitter:', 'ultimate-social-media-icons' ); ?></label><input name="sfsi_twitter_pageURL" type="url" placeholder="http://" value="<?php echo ($option2['sfsi_twitter_pageURL'] != '') ?  $option2['sfsi_twitter_pageURL'] : ''; ?>" class="add" /></p>
 
-            <div class="radio_section fb_url twt_fld"><input name="sfsi_twitter_followme" <?php echo ($option2['sfsi_twitter_followme'] == 'yes') ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" /><label><?php _e( 'Follow me on Twitter:', 'ultimate-social-media-icons' ); ?></label><input name="sfsi_twitter_followUserName" type="text" value="<?php echo ($option2['sfsi_twitter_followUserName'] != '') ?  $option2['sfsi_twitter_followUserName'] : ''; ?>" placeholder="my_twitter_name" class="add" /></div>
+            <div class="radio_section fb_url twt_fld"><input name="sfsi_twitter_followme" <?php echo ($option2['sfsi_twitter_followme'] == 'yes') ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" /><label><?php _e( 'Follow me on Twitter:', 'ultimate-social-media-icons' ); ?></label><input name="sfsi_twitter_followUserName" type="text" value="<?php echo ($option2['sfsi_twitter_followUserName'] != '') ? esc_attr($option2['sfsi_twitter_followUserName']) : ''; ?>" placeholder="my_twitter_name" class="add" /></div>
             <?php
             $twitter_text = isset($option2['sfsi_twitter_aboutPageText']) && !empty($option2['sfsi_twitter_aboutPageText']) ? $option2['sfsi_twitter_aboutPageText'] : '';
             ?>
@@ -402,7 +402,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
         <h2 class="sfsicls_instagram"><?php _e( 'Instagram', 'ultimate-social-media-icons' ); ?></h2>
         <div class="inr_cont">
             <p><?php _e( 'When clicked on, users will get directed to your Instagram page.', 'ultimate-social-media-icons' ); ?></p>
-            <p class="radio_section fb_url  cus_link instagram_space"><label><?php _e( 'URL:', 'ultimate-social-media-icons' ); ?></label><input name="sfsi_instagram_pageUrl" type="text" value="<?php echo (isset($option2['sfsi_instagram_pageUrl']) && $option2['sfsi_instagram_pageUrl'] != '') ?  $option2['sfsi_instagram_pageUrl'] : ''; ?>" placeholder="http://" class="add" /></p>
+            <p class="radio_section fb_url  cus_link instagram_space"><label><?php _e( 'URL:', 'ultimate-social-media-icons' ); ?></label><input name="sfsi_instagram_pageUrl" type="text" value="<?php echo (isset($option2['sfsi_instagram_pageUrl']) && $option2['sfsi_instagram_pageUrl'] != '') ?  esc_attr($option2['sfsi_instagram_pageUrl']) : ''; ?>" placeholder="http://" class="add" /></p>
         </div>
     </div>
     <!-- END INSTAGRAM ICON -->
@@ -430,12 +430,12 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
                 ?>
             </p>
             <p style="margin-bottom:20px;"><?php _e( 'The LinkedIn icon should allow users to... ', 'ultimate-social-media-icons' ); ?></p>
-            <div class="radio_section fb_url link_1" style="margin: 18px 0 23px;"><input name="sfsi_linkedin_page" <?php echo ($option2['sfsi_linkedin_page'] == 'yes') ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" /><label><?php _e( 'Visit my Linkedin page at:', 'ultimate-social-media-icons' ); ?></label><input name="sfsi_linkedin_pageURL" type="text" placeholder="http://" value="<?php echo ($option2['sfsi_linkedin_pageURL'] != '') ?  $option2['sfsi_linkedin_pageURL'] : ''; ?>" class="add" /></div>
-            <div class="radio_section fb_url link_2" style="margin: 0px 0 23px;"><input name="sfsi_linkedin_follow" <?php echo ($option2['sfsi_linkedin_follow'] == 'yes') ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" /><label><?php _e( 'Follow me on Linkedin:', 'ultimate-social-media-icons' ); ?> </label><input name="sfsi_linkedin_followCompany" type="text" value="<?php echo ($option2['sfsi_linkedin_followCompany'] != '') ?  $option2['sfsi_linkedin_followCompany'] : ''; ?>" class="add" placeholder="Enter company ID, e.g. 123456" /></div>
+            <div class="radio_section fb_url link_1" style="margin: 18px 0 23px;"><input name="sfsi_linkedin_page" <?php echo ($option2['sfsi_linkedin_page'] == 'yes') ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" /><label><?php _e( 'Visit my Linkedin page at:', 'ultimate-social-media-icons' ); ?></label><input name="sfsi_linkedin_pageURL" type="text" placeholder="http://" value="<?php echo ($option2['sfsi_linkedin_pageURL'] != '') ?  esc_attr($option2['sfsi_linkedin_pageURL']) : ''; ?>" class="add" /></div>
+            <div class="radio_section fb_url link_2" style="margin: 0px 0 23px;"><input name="sfsi_linkedin_follow" <?php echo ($option2['sfsi_linkedin_follow'] == 'yes') ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" /><label><?php _e( 'Follow me on Linkedin:', 'ultimate-social-media-icons' ); ?> </label><input name="sfsi_linkedin_followCompany" type="text" value="<?php echo ($option2['sfsi_linkedin_followCompany'] != '') ? esc_attr($option2['sfsi_linkedin_followCompany']) : ''; ?>" class="add" placeholder="Enter company ID, e.g. 123456" /></div>
 
             <div class="radio_section fb_url link_3" style="margin: 0px 0 23px;"><input name="sfsi_linkedin_SharePage" <?php echo ($option2['sfsi_linkedin_SharePage'] == 'yes') ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" /><label><?php _e( 'Share my page on LinkedIn', 'ultimate-social-media-icons' ); ?></label></div>
 
-            <div class="radio_section fb_url link_4" style="margin: 10px 0 0px;"><input name="sfsi_linkedin_recommendBusines" <?php echo ($option2['sfsi_linkedin_recommendBusines'] == 'yes') ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" /><label class="anthr_labl"><?php _e( 'Recommend my business or product on Linkedin:', 'ultimate-social-media-icons' ); ?></label><input name="sfsi_linkedin_recommendProductId" type="text" value="<?php echo ($option2['sfsi_linkedin_recommendProductId'] != '') ?  $option2['sfsi_linkedin_recommendProductId'] : ''; ?>" class="add link_dbl" placeholder="Enter Product ID, e.g. 1441" /> <input name="sfsi_linkedin_recommendCompany" type="text" value="<?php echo ($option2['sfsi_linkedin_recommendCompany'] != '') ?  $option2['sfsi_linkedin_recommendCompany'] : ''; ?>" class="add" placeholder="Enter company name, e.g. Google”" /></div>
+            <div class="radio_section fb_url link_4" style="margin: 10px 0 0px;"><input name="sfsi_linkedin_recommendBusines" <?php echo ($option2['sfsi_linkedin_recommendBusines'] == 'yes') ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" /><label class="anthr_labl"><?php _e( 'Recommend my business or product on Linkedin:', 'ultimate-social-media-icons' ); ?></label><input name="sfsi_linkedin_recommendProductId" type="text" value="<?php echo ($option2['sfsi_linkedin_recommendProductId'] != '') ? esc_attr($option2['sfsi_linkedin_recommendProductId']) : ''; ?>" class="add link_dbl" placeholder="Enter Product ID, e.g. 1441" /> <input name="sfsi_linkedin_recommendCompany" type="text" value="<?php echo ($option2['sfsi_linkedin_recommendCompany'] != '') ?  esc_attr($option2['sfsi_linkedin_recommendCompany']) : ''; ?>" class="add" placeholder="Enter company name, e.g. Google”" /></div>
 
             <div class="lnkdin_instruction">
                 <?php _e( 'To find your Product or Company ID, you can use their ID lookup tool at', 'ultimate-social-media-icons' ); ?> <a target="_blank" href="https://developer.linkedin.com/apply-getting-started#company-lookup">https://developer.linkedin.com/apply-getting-started#company-lookup</a>. <?php _e( 'You need to be logged in to Linkedin to be able to use it.', 'ultimate-social-media-icons' ); ?>
@@ -451,12 +451,12 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
 
             <div class="radio_section fb_url" style="display:flow-root; margin: 16px 0 17px;">
                 <input name="sfsi_telegram_msg_option" <?php echo ( !isset( $option2['sfsi_telegram_msg_option'] ) || ( isset( $option2['sfsi_telegram_msg_option'] ) && $option2['sfsi_telegram_msg_option'] ) == 'yes' ) ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" />
-                <label><?php _e( 'Message me on Telegram:', 'ultimate-social-media-icons' ); ?></label> 
+                <label><?php _e( 'Message me on Telegram:', 'ultimate-social-media-icons' ); ?></label>
                 <ul style="margin-left: 10px;">
                     <li style="margin-left: 20px;" >
                         <p class="radio_section fb_url no_check ">
                             <label><?php _e( 'Pre-filled message', 'ultimate-social-media-icons' ); ?></label>
-                            <input name="sfsi_telegram_message" type="text" value="<?php echo ($option2['sfsi_telegram_message'] != '') ?  $option2['sfsi_telegram_message'] : ''; ?>" placeholder="message" class="add" />
+                            <input name="sfsi_telegram_message" type="text" value="<?php echo ($option2['sfsi_telegram_message'] != '') ? esc_attr($option2['sfsi_telegram_message']) : ''; ?>" placeholder="message" class="add" />
                         </p>
                     </li>
                     <li style="margin-left: 20px;">
@@ -473,7 +473,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
                         <span class="checkbox" style="background-position:0px 0px!important;width:31px"></span>
                     </div>
                     <div class="sfsicnwrp" style="margin-top: 5px;">
-                        <?php 
+                        <?php
                             _e( 'Share my blog on Telegram', 'ultimate-social-media-icons' );
                             echo sfsi_premium_tooltip_content( 'tp-checkbox-link' );
                         ?>
@@ -500,7 +500,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
                         <span class="checkbox" style="background-position:0px 0px!important;width:31px"></span>
                     </div>
                     <div class="sfsicnwrp" style="margin-top: 5px;">
-                        <?php 
+                        <?php
                             _e( 'Follow me on WeChat', 'ultimate-social-media-icons' );
                             echo sfsi_premium_tooltip_content( 'tp-checkbox-link' );
                         ?>
@@ -533,7 +533,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
                             <span class="radio" style="background-position:0px 0px!important;"></span>
                         </div>
                         <div class="sfsicnwrp">
-                            <?php 
+                            <?php
                                 _e( 'Allow users to send me a Whatsapp message', 'ultimate-social-media-icons' );
                                 echo sfsi_premium_tooltip_content();
                             ?>
@@ -611,7 +611,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
         <h2 class="sfsicls_ok"><?php _e( 'OK', 'ultimate-social-media-icons' ); ?></h2>
         <div class="inr_cont ok_tab_2">
             <p><?php _e( 'When clicked on, users will get directed to your OK page.', 'ultimate-social-media-icons' ); ?></p>
-            
+
             <p class="radio_section fb_url" style="display:flow-root">
                 <input name="sfsi_ok_page" <?php echo ( !isset( $option2['sfsi_ok_page'] ) || ( isset( $option2['sfsi_ok_page'] ) && $option2['sfsi_ok_page'] == 'yes' ) ) ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" />
                 <label>
@@ -705,7 +705,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
     <div class="row fbmessenger_section">
         <h2 class="sfsicls_fbmessenger"><?php _e( 'Facebook Messenger', 'ultimate-social-media-icons' ); ?></h2>
         <div class="inr_cont">
-            
+
             <p><?php _e( 'The Facebook Messenger icon can perform the following actions:', 'ultimate-social-media-icons' ); ?></p>
 
             <p class="radio_section fb_url extra_sp" style="display:flow-root; margin-bottom: 0;">
@@ -754,7 +754,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
                 <label><?php _e( 'Visit my Mastodon profile at:', 'ultimate-social-media-icons' ); ?></label>
                 <input class="add" name="sfsi_mastodon_pageURL" type="url" placeholder="http://" value="<?php echo ( isset( $option2['sfsi_mastodon_pageURL'] ) && $option2['sfsi_mastodon_pageURL'] != '' ) ? esc_url( $option2['sfsi_mastodon_pageURL'] ) : ''; ?>" />
             </p>
-            
+
             <div class="radio_section extra_sp sfsi-max-content clear" style="display:flow-root;padding-top: 23px;margin-top: 6px;">
                 <label class="sfsi_tooltip_premium d-flex flex-row">
                     <div class="sfsiicnsdvwrp" style="margin-right: 15px; width: auto;">
@@ -771,7 +771,7 @@ if (isset($option2['sfsi_youtubeusernameorid']) && "id" == $option2['sfsi_youtub
         </div>
     </div>
     <!-- END MASTODON ICON -->
-    
+
     <!-- Custom icon section start here -->
     <div class="custom-links custom_section">
         <?php

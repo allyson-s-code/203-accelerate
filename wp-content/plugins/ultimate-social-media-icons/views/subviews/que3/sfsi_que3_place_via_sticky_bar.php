@@ -67,16 +67,16 @@
                                     <?php foreach ($sfsi_premium_sticky_icons['default_icons'] as $icon => $icon_config) : ?>
                                         <li class="sfsi_premium_sticky_default_icon_container" style="width: 44%;">
                                             <div class="radio_section tb_4_ck">
-                                                <input name="sfsi_premium_sticky_<?php echo $icon; ?>_display" <?php echo ($icon_config['active'] == 'yes') ? 'checked="true"' : ''; ?> id="sfsi_premium_sticky_<?php echo $icon; ?>_display" type="checkbox" value="yes" class="styled" data-icon="<?php echo $icon; ?>" />
+                                                <input name="sfsi_premium_sticky_<?php echo esc_attr($icon); ?>_display" <?php echo ($icon_config['active'] == 'yes') ? 'checked="true"' : ''; ?> id="sfsi_premium_sticky_<?php echo esc_attr($icon); ?>_display" type="checkbox" value="yes" class="styled" data-icon="<?php echo esc_attr($icon); ?>" />
                                             </div>
                                             <span class="sfsi_premium_icon_container">
                                                 <div class="sfsi_premium_sticky_icon_item_container sfsi_responsive_icon_<?php echo strtolower($icon); ?>_container" style="word-break:break-all;padding-left:0">
                                                     <div style="display: inline-block;height: 40px;width: 40px;text-align: center;vertical-align: middle!important;float: left;display:flex;justify-content:center">
-                                                        <img style="float:none" src="<?php echo SFSI_PLUGURL; ?>images/responsive-icon/<?php echo $icon; ?><?php echo 'Follow' === $icon ? '.png' : '.svg'; ?>"></div>
+                                                        <img style="float:none" src="<?php echo SFSI_PLUGURL; ?>images/responsive-icon/<?php echo esc_attr($icon); ?><?php echo 'Follow' === $icon ? '.png' : '.svg'; ?>"></div>
                                                 </div>
                                             </span>
                                             <a href="#" class="sfsi_premium_sticky_default_url_toggler" style=""><?php _e('Define url*', 'ultimate-social-media-icons' ); ?></a>
-                                            <input style="display:none" class="sfsi_premium_sticky_url_input" type="text" placeholder="Enter url" name="sfsi_premium_sticky_<?php echo $icon ?>_url_input" value="<?php echo $icon_config["url"]; ?>" />
+                                            <input style="display:none" class="sfsi_premium_sticky_url_input" type="text" placeholder="Enter url" name="sfsi_premium_sticky_<?php echo esc_attr($icon) ?>_url_input" value="<?php echo esc_attr($icon_config["url"]); ?>" />
                                             <a href="#" class="sfsi_premium_sticky_default_url_hide" style="display:none"><span class="sfsi_premium_cancel_text"><?php _e('Cancel', 'ultimate-social-media-icons' ); ?></span></a>
                                         </li>
                                     <?php endforeach; ?>
@@ -97,7 +97,7 @@
                                             </div>
                                         </li>
                                     <?php endforeach; ?>
-                                    
+
                                     <li class="sfsi_premium_sticky_custom_icon_container sfsi_premium_sticky_custom_check_option sfsi_tooltip_premium" style="width: 44% !important; display: flex;">
                                         <div class="radio_section tb_4_ck">
                                             <span class="checkbox" style="background-position:0px 0px!important;" id="sfsi_premium_sticky_custom_new_display"></span>
@@ -140,7 +140,7 @@
                             <div class="icons_size">
                                 <div class="sfsi_post_icons_size_alignments_element" style="width:100%">
                                     <span class="last" style="width: 39%;"><?php _e('Definition of “Desktop”: Screens larger than', 'ultimate-social-media-icons' ); ?></span>
-                                    <input name="sfsi_sticky_bar_desktop_width" type="text" value="<?php echo (isset($sfsi_premium_sticky_icons['settings']['desktop_width']) && $sfsi_premium_sticky_icons['settings']['desktop_width'] != '') ?  $sfsi_premium_sticky_icons['settings']['desktop_width'] : 782; ?>" />
+                                    <input name="sfsi_sticky_bar_desktop_width" type="text" value="<?php echo (isset($sfsi_premium_sticky_icons['settings']['desktop_width']) && $sfsi_premium_sticky_icons['settings']['desktop_width'] != '') ? esc_attr($sfsi_premium_sticky_icons['settings']['desktop_width']) : 782; ?>" />
                                     <ins><?php _e('pixels (width)', 'ultimate-social-media-icons' ); ?></ins>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
 
                                 <div class="sfsi_post_icons_size_alignments_element" style="margin-right:0;width: 100%;">
                                     <span class="sfsi_new_alignment_span" style="line-height: 44px;width: 39%;display: block;float: left;font-size: 17px;font-weight: 400;line-height: 42px;"><?php _e( 'Adjust positioning: move the bar… ', 'ultimate-social-media-icons' ); ?></span>
-                                    <input name="sfsi_sticky_bar_display_position" type="text" value="<?php echo (isset($sfsi_premium_sticky_icons['settings']['display_position']) && $sfsi_premium_sticky_icons['settings']['display_position'] != '') ?  $sfsi_premium_sticky_icons['settings']['display_position'] : 0; ?>" />
+                                    <input name="sfsi_sticky_bar_display_position" type="text" value="<?php echo (isset($sfsi_premium_sticky_icons['settings']['display_position']) && $sfsi_premium_sticky_icons['settings']['display_position'] != '') ? esc_attr($sfsi_premium_sticky_icons['settings']['display_position']) : 0; ?>" />
                                     <ins><?php _e( 'pixels', 'ultimate-social-media-icons' ); ?></ins>
                                     <ins style="margin-right: 8px; margin-left: 15px;"><?php _e( 'more', 'ultimate-social-media-icons' ); ?></ins>
                                     <div class="field" style="line-height: normal;">
@@ -205,7 +205,7 @@
                             <div class="icons_size">
                                 <div class="sfsi_post_icons_size_alignments_element" style="width: 100%;">
                                     <span class="last" style="width: 39%;"><?php _e( 'Definition of “Mobile”: Screens smaller than', 'ultimate-social-media-icons' ); ?></span>
-                                    <input name="sfsi_sticky_bar_mobile_width" type="text" value="<?php echo (isset($sfsi_premium_sticky_icons['settings']['mobile_width']) && $sfsi_premium_sticky_icons['settings']['mobile_width'] != '') ?  $sfsi_premium_sticky_icons['settings']['mobile_width'] : 783; ?>" />
+                                    <input name="sfsi_sticky_bar_mobile_width" type="text" value="<?php echo (isset($sfsi_premium_sticky_icons['settings']['mobile_width']) && $sfsi_premium_sticky_icons['settings']['mobile_width'] != '') ? esc_attr($sfsi_premium_sticky_icons['settings']['mobile_width']) : 783; ?>" />
                                     <ins><?php _e( 'pixels (width)', 'ultimate-social-media-icons' ); ?></ins>
                                 </div>
                             </div>

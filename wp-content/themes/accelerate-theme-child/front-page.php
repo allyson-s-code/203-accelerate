@@ -17,7 +17,7 @@ get_header(); ?>
 		<div class="main-content" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php the_content(); ?>
-				<a class="button" href="<?php echo site_url('/case-studies/') ?>">View Our Work</a>
+				<a class="button" href="<?php echo site_url('/archives/case-studies/') ?>">View Our Work</a>
 			<?php endwhile; // end of the loop. ?>
 		</div><!-- .main-content -->
 	</div><!-- #primary -->
@@ -40,8 +40,8 @@ get_header(); ?>
 
                     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                 </li>        
-                <?php endwhile; ?>
-                <?php wp_reset_query(); ?>
+                <?php endwhile; ?><?php wp_reset_query(); ?>
+                
                 
             </ul>
         

@@ -96,7 +96,7 @@ $sfsi_responsive_icon_dummy = array(
   "xing"
 );
 ?>
- 
+
 <!-- Section 6 "Do you want to display icons at the end of every post?" main div Start -->
 <div>
 <p class="clear"><?php _e( 'Here you have two options:', 'ultimate-social-media-icons' ); ?></span></p>
@@ -164,9 +164,9 @@ $sfsi_responsive_icon_dummy = array(
                         <span> <?php echo $icon_config["text"];  ?> </span>
                       </div>
                     </span>
-                    <input type="text" class="sfsi_responsive_input" name="sfsi_responsive_<?php echo $icon ?>_input" value="<?php echo $icon_config["text"]; ?>" />
+                    <input type="text" class="sfsi_responsive_input" name="sfsi_responsive_<?php echo $icon ?>_input" value="<?php echo esc_attr($icon_config["text"]); ?>" />
                     <a href="#" class="sfsi_responsive_default_url_toggler" style="text-decoration: none;"><?php _e("Define URL*",'ultimate-social-media-icons') ?></a>
-                    <input style="display:none" class="sfsi_responsive_url_input" type="text" placeholder="Enter url" name="sfsi_responsive_<?php echo $icon ?>_url_input" value="<?php echo $icon_config["url"]; ?>" />
+                    <input style="display:none" class="sfsi_responsive_url_input" type="text" placeholder="Enter url" name="sfsi_responsive_<?php echo $icon ?>_url_input" value="<?php echo esc_attr($icon_config["url"]); ?>" />
                     <a href="#" class="sfsi_responsive_default_url_hide" style="display:none"><span class="sfsi_cancel_text"><?php _e("Cancel",'ultimate-social-media-icons') ?></span><span class="sfsi_cancel_icon">&times;</span></a>
                   </li>
 
@@ -191,10 +191,10 @@ $sfsi_responsive_icon_dummy = array(
                     <a href="#" class="sfsi_responsive_default_url_hide" style="display:none"><span class="sfsi_cancel_text"><?php _e("Cancel",'ultimate-social-media-icons') ?></span><span class="sfsi_cancel_icon">&times;</span></a>
                   </li>
                 <?php }
-                
+
                 foreach ($sfsi_responsive_icon_dummy as $icon ) :
                 ?>
-                  
+
                   <li class="sfsi_responsive_default_icon_container sfsi_vertical_center sfsi_border_left_0 sfsi_tooltip_premium">
                     <div class="radio_section tb_4_ck">
                       <span class="checkbox" style="background-position:0px 0px!important;" id="sfsi_responsive_<?php echo $icon; ?>_display"></span>
@@ -223,7 +223,7 @@ $sfsi_responsive_icon_dummy = array(
                       <span style="color:#69737C;"><?php _e( 'Custom', 'ultimate-social-media-icons' ); ?></span>
                       <?php echo sfsi_premium_tooltip_content( 'sfsi_tooltip_text_premium_small', 'ml-0' ); ?>
                     </div>
-                  </span>    
+                  </span>
                 </li>
               </ul>
               <p style="font-size:16px !important;padding-left: 0px;clear: both;">
@@ -306,7 +306,7 @@ $sfsi_responsive_icon_dummy = array(
                   <li><?php _e("3. The Tweet-button allows quick tweeting of your article",'ultimate-social-media-icons') ?></li>
                 </ul>
                 <?php if ($option6['sfsi_show_premium_placement_box'] == 'yes') { ?>
-                  <p class="sfsi_prem_plu_desc" style="float:left"><?php 
+                  <p class="sfsi_prem_plu_desc" style="float:left"><?php
                     printf(
                       __( '%1$sNew:%2$s We also added a Linkedin share-icon in the Premium Plugin. %3$sGo premium now%4$s or learn more.%5$s', 'ultimate-social-media-icons' ),
                       '<b>',
@@ -324,7 +324,7 @@ $sfsi_responsive_icon_dummy = array(
 
                   <div class="options">
 
-                  <label class="first"><?php _e("Text to appear before the sharing icons: ",'ultimate-social-media-icons') ?></label><input name="sfsi_textBefor_icons" type="text" value="<?php echo ($option6['sfsi_textBefor_icons'] != '') ?  $option6['sfsi_textBefor_icons'] : ''; ?>" />
+                  <label class="first"><?php _e("Text to appear before the sharing icons: ",'ultimate-social-media-icons') ?></label><input name="sfsi_textBefor_icons" type="text" value="<?php echo ($option6['sfsi_textBefor_icons'] != '') ? esc_attr($option6['sfsi_textBefor_icons']) : ''; ?>" />
 
                   </div>
 
@@ -522,7 +522,7 @@ $sfsi_responsive_icon_dummy = array(
                 </div>
                 <div class="options" style="font-family: 'helveticaneue-light'">
                   <div class="sfsi_tooltip_premium sfsi_tooltip_premium_small">
-                    <?php 
+                    <?php
                       _e( 'You can also show the icon by using the shortcode [DISPLAY_RESPONSIVE_ICONS] (or place the string &lt;?php echo DISPLAY_RESPONSIVE_ICONS(); ?&gt; into your theme codes).', 'ultimate-social-media-icons' );
 
                       echo sfsi_premium_tooltip_content( 'sfsi_tooltip_text_premium_small', '', 'margin-left: 5px !important;' );
@@ -682,16 +682,16 @@ $sfsi_responsive_icon_dummy = array(
                     <div class="sfsi_responsive_icon_share_count" style="<?php echo ( isset($sfsi_responsive_icons['settings'] ) && isset( $sfsi_responsive_icons['settings']['show_count'] ) && $sfsi_responsive_icons['settings']['show_count'] == 'no' ) ? 'display:none' : ''; ?>">
                         <div class="options textBefor_icons_fontcolor textBefor_icons_fontcolor_counter_wrapper">
                             <label class="first"><?php _e( 'Background color:', 'ultimate-social-media-icons' ); ?></label>
-                            <input name="sfsi_responsive_counter_bg_color" id="sfsi_responsive_counter_bg_color" data-default-color="#fff" type="text" value="<?php echo ( $sfsi_responsive_icons['settings']['counter_bg_color'] != '' ) ? $sfsi_responsive_icons['settings']['counter_bg_color'] : '#fff'; ?>" />
+                            <input name="sfsi_responsive_counter_bg_color" id="sfsi_responsive_counter_bg_color" data-default-color="#fff" type="text" value="<?php echo ( $sfsi_responsive_icons['settings']['counter_bg_color'] != '' ) ? esc_attr($sfsi_responsive_icons['settings']['counter_bg_color']) : '#fff'; ?>" />
                         </div>
                         <div class="options textBefor_icons_fontcolor textBefor_icons_fontcolor_counter_wrapper">
                             <label class="first"><?php _e( 'Font color (of counts):', 'ultimate-social-media-icons' ); ?></label>
-                            <input name="sfsi_responsive_counter_color" id="sfsi_responsive_counter_color" data-default-color="#aaaaaa" type="text" value="<?php echo (isset($sfsi_responsive_icons['settings']['counter_color']) && $sfsi_responsive_icons['settings']['counter_color'] != '') ? $sfsi_responsive_icons['settings']['counter_color'] : '#aaaaaa'; ?>" />
+                            <input name="sfsi_responsive_counter_color" id="sfsi_responsive_counter_color" data-default-color="#aaaaaa" type="text" value="<?php echo (isset($sfsi_responsive_icons['settings']['counter_color']) && $sfsi_responsive_icons['settings']['counter_color'] != '') ? esc_attr($sfsi_responsive_icons['settings']['counter_color']) : '#aaaaaa'; ?>" />
                         </div>
                         <div class="options sfsi_inputSec">
                             <label class="first"><?php _e( 'Share count text:', 'ultimate-social-media-icons' ); ?></label>
                             <div class="field">
-                                <input name="sfsi_responsive_counter_share_count_text" class="sfsi_responsive_counter_share_count_text" type="text" value="<?php echo (isset($sfsi_responsive_icons['settings']['share_count_text']) && $sfsi_responsive_icons['settings']['share_count_text'] != '') ? $sfsi_responsive_icons['settings']['share_count_text'] : 'SHARES'; ?>" />
+                                <input name="sfsi_responsive_counter_share_count_text" class="sfsi_responsive_counter_share_count_text" type="text" value="<?php echo (isset($sfsi_responsive_icons['settings']['share_count_text']) && $sfsi_responsive_icons['settings']['share_count_text'] != '') ? esc_attr($sfsi_responsive_icons['settings']['share_count_text']) : 'SHARES'; ?>" />
                             </div>
                         </div>
                     </div>

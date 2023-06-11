@@ -2,8 +2,8 @@
 Contributors: socialdude, socialtech
 Tags: share, social, share icons, social media, widget, sharing icons, sharing buttons, social share, sharing
 Requires at least: 3.5
-Tested up to: 6.2
-Stable tag: 2.8.1
+Tested up to: 6.2.2
+Stable tag: 2.8.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -301,6 +301,12 @@ It depends on which language you speak :) however probably the answer is â€œyesâ
 
 
 == Changelog ==
+
+= 2.8.2 =
+* Tested with WP 6.2.2
+* Adjusted text inputs
+* Removed unused modules
+* Updated carrousel module
 
 = 2.8.1 =
 * Tested with WP 6.2

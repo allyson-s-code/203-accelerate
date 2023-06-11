@@ -42,7 +42,7 @@
                     <div disabled class="effectName inactiveSection">
                         <input class="styled" type="radio" name="sfsi_same_icons_mouseOver_effect" value="fade_out" <?php echo ( isset( $option3['sfsi_mouseOver_effect'] ) && $option3['sfsi_mouseOver_effect'] == 'fade_out' ) ? 'checked="true"' : ''; ?> />
 
-                        <label> 
+                        <label>
                             <span><?php _e( 'Fade Out', 'ultimate-social-media-icons' ); ?></span>
                             <span><?php _e( '(Icons turn from full color to shadow)', 'ultimate-social-media-icons' ); ?></span>
                         </label>
@@ -61,7 +61,7 @@
 
             <div class="row rowpadding10 rowmarginleft35 other_icons_effects_options <?php echo ( isset( $option3['sfsi_mouseOver_effect_type'] ) && $option3['sfsi_mouseOver_effect_type'] == 'other_icons' ) ? 'show' : 'hide'; ?>">
                 <div disabled class="col-md-12 inactiveSection other_icons_effects_options_container sfsi_icon_flex_box">
-                    <?php 
+                    <?php
                         $arrDefaultIcons             = unserialize( SFSI_ALLICONS );
                         $arrActiveStdDesktopIcons    = sfsi_get_displayed_std_desktop_icons( $option1 );
                         $arrActiveCustomDesktopicons = sfsi_get_displayed_custom_desktop_icons( $option1 );
@@ -113,7 +113,7 @@
             <p class="radio_section tab_3_option">
                 <input name="sfsi_shuffle_interval" <?php echo ( isset( $option3['sfsi_shuffle_interval'] ) && $option3['sfsi_shuffle_interval'] == 'yes' ) ? 'checked="true"' : ''; ?> type="checkbox" value="yes" class="styled" />
                 <label><?php _e( 'Every', 'ultimate-social-media-icons' ); ?></label>
-                <input class="smal_inpt" type="text" name="sfsi_shuffle_intervalTime" value="<?php echo ( isset( $option3['sfsi_shuffle_intervalTime'] ) && $option3['sfsi_shuffle_intervalTime'] != '' ) ? $option3['sfsi_shuffle_intervalTime'] : ''; ?>" />
+                <input class="smal_inpt" type="text" name="sfsi_shuffle_intervalTime" value="<?php echo ( isset( $option3['sfsi_shuffle_intervalTime'] ) && $option3['sfsi_shuffle_intervalTime'] != '' ) ? esc_attr($option3['sfsi_shuffle_intervalTime']) : ''; ?>" />
                 <label><?php _e( 'seconds', 'ultimate-social-media-icons' ); ?></label>
             </p>
         </div>

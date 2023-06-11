@@ -52,6 +52,7 @@
 
               // Handle the request
               add_action('wp_ajax_inisev_installation', [&$this, 'handle_installation']);
+              add_action('wp_ajax_inisev_installation_widget', [&$this, 'handle_installation']);
 
             }
 
@@ -126,6 +127,7 @@
 
           // Make sure $menu exists
           if (!isset($menu) || !is_array($menu)) return $this->fail(5);
+          if (!current_user_can('install_plugins')) return $this->fail(10);
 
           // Get menu slug name
           if (!$this->menu_name($menu)) return false;
@@ -431,8 +433,12 @@
         */
         public function handle_installation() {
 
-          if(check_ajax_referer('inisev_carousel', 'nonce', false) === false) {
-             wp_send_json_error();
+          if (check_ajax_referer('inisev_carousel', 'nonce', false) === false) {
+            return wp_send_json_error();
+          }
+
+          if (!current_user_can('install_plugins')) {
+            return wp_send_json_error();
           }
 
           // Handle the slug and install the plugin

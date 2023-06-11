@@ -76,7 +76,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
         <?php _e("In addition to the email- and follow-icon you can also show a subscription form which maximizes chances that people subscribe to your site.",'ultimate-social-media-icons') ?>
     </p>
     <p class='sfsi_subscribe_popbox_link'>
-    <?php 
+    <?php
 		printf(
             __( 'To get access to the emails who subscribe, interesting statistics about your subscribers, alerts when people subscribe or unsubscribe and to tailor the sender name & the subject line of the emails, please %1s click here.%2s','ultimate-social-media-icons' ),
             '<a class="pop-up" href="javascript:" data-id="sfsi_feedClaimingOverlay">',
@@ -206,7 +206,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <label><?php _e("Height",'ultimate-social-media-icons') ?></label>
 
-                        <input name="sfsi_form_height" type="text" value="<?php echo ($option8['sfsi_form_height'] != '') ?  $option8['sfsi_form_height'] : ''; ?>" class="small rec-inp" /><span class="pix">pixels</span>
+                        <input name="sfsi_form_height" type="text" value="<?php echo ($option8['sfsi_form_height'] != '') ? esc_attr($option8['sfsi_form_height']) : ''; ?>" class="small rec-inp" /><span class="pix">pixels</span>
 
                     </div>
 
@@ -214,7 +214,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <label><?php _e("Width",'ultimate-social-media-icons') ?></label>
 
-                        <input name="sfsi_form_width" type="text" value="<?php echo ($option8['sfsi_form_width'] != '') ?  $option8['sfsi_form_width'] : ''; ?>" class="small rec-inp" /><span class="pix">pixels</span>
+                        <input name="sfsi_form_width" type="text" value="<?php echo ($option8['sfsi_form_width'] != '') ? esc_attr($option8['sfsi_form_width']) : ''; ?>" class="small rec-inp" /><span class="pix">pixels</span>
 
                     </div>
 
@@ -258,7 +258,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <input name="sfsi_form_border_thickness" type="text" value="<?php echo ($option8['sfsi_form_border_thickness'] != '')
 
-                                                                                        ? $option8['sfsi_form_border_thickness'] : '';
+                                                                                        ? esc_attr($option8['sfsi_form_border_thickness']) : '';
 
                                                                                     ?>" class="small rec-inp" /><span class="pix"><?php _e("pixels",'ultimate-social-media-icons') ?></span>
 
@@ -270,7 +270,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <input id="sfsi_form_border_color" data-default-color="#b5b5b5" type="text" name="sfsi_form_border_color" value="<?php echo ($option8['sfsi_form_border_color'] != '')
 
-                                                                                                                                                ? $option8['sfsi_form_border_color'] : '';
+                                                                                                                                                ? esc_attr($option8['sfsi_form_border_color']) : '';
 
                                                                                                                                             ?>">
 
@@ -298,7 +298,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <input id="sfsi_form_background" data-default-color="#b5b5b5" type="text" name="sfsi_form_background" value="<?php echo ($option8['sfsi_form_background'] != '')
 
-                                                                                                                                            ? $option8['sfsi_form_background'] : '';
+                                                                                                                                            ? esc_attr($option8['sfsi_form_background']) : '';
 
                                                                                                                                         ?>">
 
@@ -347,7 +347,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <input type="text" class="small new-inp" name="sfsi_form_heading_text" value="<?php echo ($option8['sfsi_form_heading_text'] != '')
 
-                                                                                                            ? $option8['sfsi_form_heading_text'] : '';
+                                                                                                            ? esc_attr($option8['sfsi_form_heading_text']) : '';
 
                                                                                                         ?>" />
 
@@ -389,7 +389,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                             <input type="text" name="sfsi_form_heading_fontcolor" data-default-color="#b5b5b5" id="sfsi_form_heading_fontcolor" value="<?php echo ($option8['sfsi_form_heading_fontcolor'] != '')
 
-                                                                                                                                                            ? $option8['sfsi_form_heading_fontcolor'] : '';
+                                                                                                                                                            ? esc_attr($option8['sfsi_form_heading_fontcolor']) : '';
 
                                                                                                                                                         ?>">
 
@@ -413,7 +413,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <input type="text" class="small rec-inp" name="sfsi_form_heading_fontsize" value="<?php echo ($option8['sfsi_form_heading_fontsize'] != '')
 
-                                                                                                                ? $option8['sfsi_form_heading_fontsize'] : ''; ?>" />
+                                                                                                                ? esc_attr($option8['sfsi_form_heading_fontsize']) : ''; ?>" />
 
                         <span class="pix"><?php _e("pixels",'ultimate-social-media-icons') ?></span>
 
@@ -467,7 +467,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <input type="text" class="small new-inp" name="sfsi_form_field_text" value="<?php echo ($option8['sfsi_form_field_text'] != '')
 
-                                                                                                        ? $option8['sfsi_form_field_text'] : '';
+                                                                                                        ? esc_attr($option8['sfsi_form_field_text']) : '';
 
                                                                                                     ?>" />
 
@@ -539,7 +539,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <input type="text" class="small rec-inp" name="sfsi_form_field_fontsize" value="<?php echo ($option8['sfsi_form_field_fontsize'] != '')
 
-                                                                                                            ? $option8['sfsi_form_field_fontsize'] : ''; ?>" />
+                                                                                                            ? esc_attr($option8['sfsi_form_field_fontsize']) : ''; ?>" />
 
                         <span class="pix"><?php _e("pixels",'ultimate-social-media-icons') ?></span>
 
@@ -579,7 +579,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <input type="text" class="small new-inp" name="sfsi_form_button_text" value="<?php echo ($option8['sfsi_form_button_text'] != '')
 
-                                                                                                            ? $option8['sfsi_form_button_text'] : '';
+                                                                                                            ? esc_attr($option8['sfsi_form_button_text']) : '';
 
                                                                                                         ?>" />
 
@@ -621,7 +621,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                             <input type="text" name="sfsi_form_button_fontcolor" data-default-color="#b5b5b5" id="sfsi_form_button_fontcolor" value="<?php echo ($option8['sfsi_form_button_fontcolor'] != '')
 
-                                                                                                                                                            ? $option8['sfsi_form_button_fontcolor'] : '';
+                                                                                                                                                            ? esc_attr($option8['sfsi_form_button_fontcolor']) : '';
 
                                                                                                                                                         ?>">
 
@@ -645,7 +645,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                         <input type="text" class="small rec-inp" name="sfsi_form_button_fontsize" value="<?php echo ($option8['sfsi_form_button_fontsize'] != '')
 
-                                                                                                                ? $option8['sfsi_form_button_fontsize'] : ''; ?>" />
+                                                                                                                ? esc_attr($option8['sfsi_form_button_fontsize']) : ''; ?>" />
 
                         <span class="pix"><?php _e("pixels",'ultimate-social-media-icons') ?></span>
 
@@ -679,7 +679,7 @@ $option8['sfsi_form_button_background'] = (isset($option8['sfsi_form_button_back
 
                             <input type="text" name="sfsi_form_button_background" data-default-color="#b5b5b5" id="sfsi_form_button_background" value="<?php echo ($option8['sfsi_form_button_background'] != '')
 
-                                                                                                                                                            ? $option8['sfsi_form_button_background'] : '';
+                                                                                                                                                            ? esc_attr($option8['sfsi_form_button_background']) : '';
 
                                                                                                                                                         ?>">
 

@@ -1,16 +1,16 @@
 === Custom Twitter Feeds (Tweets Widget) ===
 Author: Smash Balloon
-Contributors: smashballoon, craig-at-smash-balloon
+Contributors: smashballoon, craig-at-smash-balloon, am, smub
 Support Website: http://smashballoon/custom-twitter-feeds/
 Tags: Twitter, Twitter feed, Twitter Tweets, Twitter widget, Custom Twitter Feed
 Requires at least: 4.1
 Tested up to: 6.2
-Stable tag: 2.0.6
+Stable tag: 2.0.7
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-As of April 3rd, 2023 this plugin is not able to retrieve Tweets from Twitter's API. We are considering and testing some solutions to allow our free plugin to continue to work. Stay tuned!
+As of April 2023 this plugin will not show updated feeds. We are working on a solution which will be available in the coming months.
 
 == Description ==
 Display **completely customizable**, **responsive** and **search engine crawlable** Twitter feeds on your website. The Custom Twitter Feeds plugin will display Tweets that completely match the look and feel of your site and includes tons of customization options!
@@ -234,6 +234,9 @@ If you're still having trouble displaying your Tweets after trying the common is
 7. To display a Twitter feed just copy and paste the shortcode into a Twitter widget or page
 
 == Changelog ==
+= 2.0.7 =
+* Update: We are working on a solution for our free users to see an updated feed. [See this page for more information]('https://smashballoon.com/doc/smash-balloon-twitter-changes-free-version/?utm_source=twitter-free&utm_medium=readme-changelog&utm_campaign=smash-twitter-update&utm_content=MoreInformation'). Thank you for your patience while we continue to fight for your success with our plugin!
+
 = 2.0.6 =
 * Fix: Fixed a conflict with Autoptimize that would cause a PHP error when clearing the Twitter cache.
 * Fix: Fixed a PHP notice that would occur when bulk deleting feeds.
